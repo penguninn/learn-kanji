@@ -7,54 +7,80 @@
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header class="app-header">
+  <header class="topbar">
     <div>
-      <p class="eyebrow">JLPT Kanji Trainer</p>
-      <h1>Học Kanji N5/N4</h1>
-      <p class="subtitle">Không DB, dữ liệu nằm trong <code>data/kanji-data.js</code>. Có lọc cấp độ, từ ghép, đồng âm và animation nét viết.</p>
+      <p class="eyebrow">JLPT N5/N4</p>
+      <h1>Kanji & Từ vựng theo danh sách</h1>
+      <p class="subtitle">Lọc theo cấp độ, nhóm Kanji, cột あいうえお. Bấm vào từng hàng để xem cách viết, âm On/Kun, từ ghép và trợ từ đi kèm.</p>
     </div>
-    <div class="header-actions">
-      <button id="resetProgressBtn" class="ghost-btn">Reset tiến độ</button>
-      <button id="quizBtn" class="primary-btn">Quiz nhanh</button>
-    </div>
+    <button id="resetProgressBtn" class="plain-btn">Reset đã nhớ</button>
   </header>
 
-  <main class="layout">
-    <aside class="sidebar">
-      <section class="panel">
-        <label class="field-label" for="searchInput">Tìm Kanji / kana / nghĩa</label>
-        <input id="searchInput" class="search-input" placeholder="vd: 食, たべる, ăn, atsui..." />
+  <main class="page">
+    <aside class="filters">
+      <label class="field">
+        <span>Tìm kiếm</span>
+        <input id="searchInput" placeholder="vd: 行, いく, đi, を..." />
+      </label>
+
+      <section class="filter-block">
+        <p>Cấp độ</p>
+        <label><input type="checkbox" value="N5" class="levelFilter" checked /> N5</label>
+        <label><input type="checkbox" value="N4" class="levelFilter" checked /> N4</label>
+        <label><input type="checkbox" value="Extra" class="levelFilter" checked /> Extra/đồng âm</label>
+        <label><input type="checkbox" value="Kana" class="levelFilter" checked /> Hiragana thuần</label>
       </section>
 
-      <section class="panel">
-        <p class="field-label">Cấp độ</p>
-        <label class="check"><input type="checkbox" value="N5" class="levelFilter" checked /> N5</label>
-        <label class="check"><input type="checkbox" value="N4" class="levelFilter" checked /> N4</label>
-        <label class="check"><input type="checkbox" value="Extra" class="levelFilter" /> Extra/đồng âm</label>
-      </section>
+      <label class="field">
+        <span>Nhóm từ vựng</span>
+        <select id="groupFilter"></select>
+      </label>
 
-      <section class="panel">
-        <p class="field-label">Chế độ xem</p>
-        <div class="segmented" role="tablist">
-          <button class="modeBtn active" data-mode="kanji">Kanji</button>
-          <button class="modeBtn" data-mode="vocab">Từ vựng</button>
-          <button class="modeBtn" data-mode="homophone">Đồng âm</button>
-        </div>
-      </section>
+      <label class="field">
+        <span>Sắp xếp</span>
+        <select id="sortMode">
+          <option value="gojuon">あいうえお</option>
+          <option value="group">Theo nhóm</option>
+          <option value="level">Theo cấp độ</option>
+        </select>
+      </label>
 
-      <section class="panel stats" id="statsPanel"></section>
+      <section id="statsPanel" class="stats"></section>
     </aside>
 
-    <section class="content">
-      <div id="quizPanel" class="quiz hidden"></div>
-      <div id="resultArea" class="result-grid"></div>
+    <section class="study">
+      <div class="list-tools">
+        <div>
+          <strong id="resultTitle">Danh sách học</strong>
+          <p>Mỗi dòng = 1 Kanji hoặc 1 từ hiragana thuần.</p>
+        </div>
+        <button id="collapseBtn" class="plain-btn">Đóng chi tiết</button>
+      </div>
+
+      <div class="split">
+        <section class="table-wrap">
+          <table class="study-table">
+            <thead>
+              <tr>
+                <th>Cột</th>
+                <th>Kanji</th>
+                <th>Từ hay dùng</th>
+                <th>Nghĩa</th>
+                <th>Nhóm</th>
+                <th>Nhớ</th>
+              </tr>
+            </thead>
+            <tbody id="resultBody"></tbody>
+          </table>
+          <div id="emptyState" class="empty hidden">Không tìm thấy dữ liệu phù hợp.</div>
+        </section>
+
+        <aside id="detailPanel" class="detail-panel">
+          <p class="muted">Chọn một hàng để xem chi tiết.</p>
+        </aside>
+      </div>
     </section>
   </main>
-
-  <dialog id="detailDialog" class="detail-dialog">
-    <button id="closeDialogBtn" class="close-btn" aria-label="Đóng">×</button>
-    <div id="detailContent"></div>
-  </dialog>
 
   <script src="./data/kanji-data.js"></script>
   <script src="./app.js"></script>
