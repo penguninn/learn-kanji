@@ -11,7 +11,7 @@
     <div>
       <p class="eyebrow">JLPT N5/N4</p>
       <h1>Kanji & Từ vựng theo danh sách</h1>
-      <p class="subtitle">Lọc theo cấp độ, nhóm Kanji, bài Minna, cột あいうえお. Bấm vào từng hàng để xem cách viết, âm On/Kun, từ ghép và trợ từ đi kèm.</p>
+      <p class="subtitle">Lọc theo cấp độ, nhóm Kanji, bài Minna. Bấm vào từng hàng để xem cách viết, âm On/Kun, từ ghép và trợ từ đi kèm.</p>
     </div>
     <button id="resetProgressBtn" class="plain-btn">Reset đã nhớ</button>
   </header>
@@ -57,33 +57,25 @@
       <div class="list-tools">
         <div>
           <strong id="resultTitle">Danh sách học</strong>
-          <p>Mỗi dòng = 1 Kanji hoặc 1 từ hiragana thuần.</p>
+          <p>Bấm vào một hàng để mở popup chi tiết.</p>
         </div>
-        <button id="collapseBtn" class="plain-btn">Đóng chi tiết</button>
       </div>
 
-      <div class="split">
-        <section class="table-wrap">
-          <table class="study-table">
-            <thead>
-              <tr>
-                <th>Cột</th>
-                <th>Kanji</th>
-                <th>Từ hay dùng</th>
-                <th>Nghĩa</th>
-                <th>Nhóm/Bài</th>
-                <th>Nhớ</th>
-              </tr>
-            </thead>
-            <tbody id="resultBody"></tbody>
-          </table>
-          <div id="emptyState" class="empty hidden">Không tìm thấy dữ liệu phù hợp.</div>
-        </section>
-
-        <aside id="detailPanel" class="detail-panel">
-          <p class="muted">Chọn một hàng để xem chi tiết.</p>
-        </aside>
-      </div>
+      <section class="table-wrap">
+        <table class="study-table">
+          <thead>
+            <tr>
+              <th>Kanji</th>
+              <th>Từ hay dùng</th>
+              <th>Nghĩa</th>
+              <th>Nhóm/Bài</th>
+              <th>Nhớ</th>
+            </tr>
+          </thead>
+          <tbody id="resultBody"></tbody>
+        </table>
+        <div id="emptyState" class="empty hidden">Không tìm thấy dữ liệu phù hợp.</div>
+      </section>
     </section>
   </main>
 
@@ -115,6 +107,7 @@
   <script src="./data/quizlet-minna-bai-23-lines.js"></script>
   <script src="./data/quizlet-minna-bai-24-lines.js"></script>
   <script src="./data/quizlet-minna-bai-25-lines.js"></script>
+  <script src="./data/minna-vi-meanings.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>
