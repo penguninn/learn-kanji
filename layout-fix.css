@@ -1,9 +1,33 @@
 body.modal-open { overflow: hidden; }
 .hidden { display: none !important; }
 
+:root {
+  --jp-font: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", "Noto Serif CJK JP", "Source Han Serif JP", serif;
+}
+
 .study-table { min-width: 720px; }
 td { padding: 14px; }
-.kanji-cell { width: 100px; min-width: 82px; font-size: 28px; }
+.kanji-cell {
+  width: 100px;
+  min-width: 82px;
+  font-family: var(--jp-font);
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  line-height: 1.25;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.detail-head h2,
+.stroke-text {
+  font-family: var(--jp-font);
+  font-weight: 500;
+}
+
+.detail-head h2 {
+  letter-spacing: .03em;
+}
 
 .split { display: block; }
 .detail-panel { display: none; }
@@ -21,4 +45,5 @@ td { padding: 14px; }
   .modal { padding: 10px; }
   .modal-card { max-height: 90vh; padding: 16px; border-radius: 16px; }
   .detail-head h2 { font-size: 56px; }
+  .kanji-cell { font-size: 28px; }
 }
