@@ -5,6 +5,8 @@
   const isKanji = ch => /[一-龯]/.test(ch);
   const hasKanji = ch => data.kanji.some(k => k.char === ch);
 
+  injectLayoutFix();
+
   window.importMinnaLesson = function importMinnaLesson(lesson, setId, raw) {
     const source = `Quizlet Minna bài ${lesson} - ${setId}`;
     const lines = raw.split('\n').map(x => x.trim()).filter(Boolean);
@@ -48,6 +50,14 @@
       }
     }
   };
+
+  function injectLayoutFix() {
+    if (document.querySelector('link[href="./layout-fix.css"]')) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = './layout-fix.css';
+    document.head.appendChild(link);
+  }
 
   function inferPatterns(word, kana) {
     if (/ます$|ました$|する$|します$|下さい$|ください$/.test(word)) return [`Nを${word}`, `場所で${word}`];
