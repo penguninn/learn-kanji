@@ -44,7 +44,6 @@ const state = { query: '', levels: new Set(['N5', 'N4', 'Extra', 'Kana']), group
 const $ = s => document.querySelector(s);
 const resultBody = $('#resultBody');
 const emptyState = $('#emptyState');
-const detailPanel = $('#detailPanel');
 const groupFilter = $('#groupFilter');
 const lessonFilter = $('#lessonFilter');
 const levelFilters = [...document.querySelectorAll('.levelFilter')];
@@ -52,24 +51,35 @@ const levelFilters = [...document.querySelectorAll('.levelFilter')];
 init();
 
 function init() {
+  ensureModal();
   groupFilter.innerHTML = '<option value="all">Tất cả nhóm</option>' + Object.entries(GROUPS).map(([id, g]) => `<option value="${id}">${g.label}</option>`).join('') + '<option value="kana">Từ hiragana thuần</option>';
-  if (lessonFilter) lessonFilter.innerHTML = '<option value="all">Tất cả bài</option>' + getLessons().map(n => `<option value="${n}">Bài ${n}</option>`).join('');
+  lessonFilter.innerHTML = '<option value="all">Tất cả bài</option>' + getLessons().map(n => `<option value="${n}">Bài ${n}</option>`).join('');
 
   $('#searchInput').addEventListener('input', e => { state.query = e.target.value.trim().toLowerCase(); render(); });
   groupFilter.addEventListener('change', e => { state.group = e.target.value; render(); });
-  if (lessonFilter) lessonFilter.addEventListener('change', e => { state.lesson = e.target.value; state.selectedKey = ''; detailPanel.innerHTML = '<p class="muted">Chọn một hàng để xem chi tiết.</p>'; render(); });
+  lessonFilter.addEventListener('change', e => { state.lesson = e.target.value; state.selectedKey = ''; closeModal(); render(); });
   $('#sortMode').addEventListener('change', e => { state.sortMode = e.target.value; render(); });
   $('#resetProgressBtn').addEventListener('click', () => { learnedSet.clear(); localStorage.removeItem(learnedKey); render(); });
-  $('#collapseBtn').addEventListener('click', () => { state.selectedKey = ''; detailPanel.innerHTML = '<p class="muted">Chọn một hàng để xem chi tiết.</p>'; render(); });
   levelFilters.forEach(x => x.addEventListener('change', () => { state.levels = new Set(levelFilters.filter(i => i.checked).map(i => i.value)); render(); }));
   resultBody.addEventListener('click', onTableClick);
-  detailPanel.addEventListener('click', onDetailClick);
+  document.addEventListener('click', onModalClick);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   render();
 }
 
-function getLessons() {
-  return [...new Set(VOCAB.flatMap(v => v.lessons || (v.lesson ? [v.lesson] : [])))].filter(Boolean).sort((a, b) => a - b);
+function ensureModal() {
+  if ($('#detailModal')) return;
+  document.body.insertAdjacentHTML('beforeend', `
+    <div id="detailModal" class="modal hidden" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <section class="modal-card" role="dialog" aria-modal="true">
+        <button class="modal-close" data-close-modal>×</button>
+        <div id="modalContent"></div>
+      </section>
+    </div>`);
 }
+
+function getLessons() { return [...new Set(VOCAB.flatMap(v => v.lessons || (v.lesson ? [v.lesson] : [])))].filter(Boolean).sort((a, b) => a - b); }
 
 function buildRows() {
   const kanjiRows = KANJI.map(k => {
@@ -81,14 +91,8 @@ function buildRows() {
   return [...kanjiRows, ...kanaRows].filter(rowMatches).sort(sortRows);
 }
 
-function wordMatchesLesson(v) {
-  if (state.lesson === 'all') return true;
-  return (v.lessons || (v.lesson ? [v.lesson] : [])).includes(Number(state.lesson));
-}
-
-function lessonsForWords(words) {
-  return [...new Set(words.flatMap(v => v.lessons || (v.lesson ? [v.lesson] : [])))].filter(Boolean).sort((a, b) => a - b);
-}
+function wordMatchesLesson(v) { return state.lesson === 'all' || (v.lessons || (v.lesson ? [v.lesson] : [])).includes(Number(state.lesson)); }
+function lessonsForWords(words) { return [...new Set(words.flatMap(v => v.lessons || (v.lesson ? [v.lesson] : [])))].filter(Boolean).sort((a, b) => a - b); }
 
 function rowMatches(row) {
   if (!state.levels.has(row.level)) return false;
@@ -117,10 +121,9 @@ function render() {
 function rowTemplate(r) {
   const learned = learnedSet.has(r.key) || learnedSet.has(r.char);
   const lessonTags = r.lessons.slice(0, 4).map(n => `<span class="tag lesson-tag">B${n}</span>`).join('') + (r.lessons.length > 4 ? `<span class="tag">+${r.lessons.length - 4}</span>` : '');
-  return `<tr class="study-row ${state.selectedKey === r.key ? 'selected' : ''}" data-key="${esc(r.key)}" data-type="${r.type}">
-    <td><span class="kana-col">${esc(gojuonColumn(r.kana))}</span><small>${esc(r.kana || '—')}</small></td>
+  return `<tr class="study-row ${state.selectedKey === r.key ? 'selected' : ''}" data-key="${esc(r.key)}">
     <td class="kanji-cell">${esc(r.char)}</td>
-    <td><strong>${esc(r.mainWord)}</strong><small>${esc(r.level)}</small></td>
+    <td><strong>${esc(r.mainWord)}</strong><small>${esc(r.kana || '—')} · ${esc(r.level)}</small></td>
     <td>${esc(r.meaning)}</td>
     <td>${r.groups.map(g => `<span class="tag">${esc(shortGroup(g))}</span>`).join('')}${lessonTags}</td>
     <td><button class="remember-btn ${learned ? 'active' : ''}" data-remember="${esc(r.key)}">${learned ? '✓' : '+'}</button></td>
@@ -129,29 +132,45 @@ function rowTemplate(r) {
 
 function onTableClick(e) {
   const remember = e.target.closest('[data-remember]');
-  if (remember) { toggleLearned(remember.dataset.remember); e.stopPropagation(); return; }
+  if (remember) { toggleLearned(remember.dataset.remember); e.stopPropagation(); render(); return; }
   const tr = e.target.closest('tr[data-key]');
   if (!tr) return;
   state.selectedKey = tr.dataset.key;
   const row = buildRows().find(x => x.key === state.selectedKey);
-  if (row) renderDetail(row);
+  if (row) openDetail(row);
   render();
 }
 
-function onDetailClick(e) {
+function onModalClick(e) {
+  if (e.target.closest('[data-close-modal]')) return closeModal();
   const remember = e.target.closest('[data-remember]');
   if (remember) { toggleLearned(remember.dataset.remember); render(); return; }
   const kanji = e.target.closest('[data-open-kanji]');
   if (kanji) {
     const row = buildRows().find(r => r.char === kanji.dataset.openKanji);
-    if (row) { state.selectedKey = row.key; renderDetail(row); render(); }
+    if (row) { state.selectedKey = row.key; openDetail(row); render(); }
   }
 }
 
-function renderDetail(row) {
-  if (row.type === 'kana') return renderKanaDetail(row);
+function openDetail(row) {
+  if (row.type === 'kana') renderKanaDetail(row); else renderKanjiDetail(row);
+  const modal = $('#detailModal');
+  modal.classList.remove('hidden');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+}
+
+function closeModal() {
+  const modal = $('#detailModal');
+  if (!modal) return;
+  modal.classList.add('hidden');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+}
+
+function renderKanjiDetail(row) {
   const k = row.item;
-  detailPanel.innerHTML = `<div class="detail-head"><div><p class="eyebrow">${esc(row.level)} · ${esc(groupLabels(row.groups))}${row.lessons.length ? ' · Bài ' + row.lessons.join(', ') : ''}</p><h2>${esc(k.char)}</h2><p>${esc(k.meanings.join(' / '))}</p></div><button class="remember-btn" data-remember="${esc(row.key)}">✓ nhớ</button></div>
+  $('#modalContent').innerHTML = `<div class="detail-head"><div><p class="eyebrow">${esc(row.level)} · ${esc(groupLabels(row.groups))}${row.lessons.length ? ' · Bài ' + row.lessons.join(', ') : ''}</p><h2>${esc(k.char)}</h2><p>${esc(k.meanings.join(' / '))}</p></div><button class="remember-btn" data-remember="${esc(row.key)}">✓</button></div>
     <div id="strokeTarget" class="stroke-box"></div>
     <section class="detail-section"><h3>Âm On/Kun</h3><div class="reading-grid"><div><b>On</b>${reading(k.onyomi)}</div><div><b>Kun</b>${reading(k.kunyomi)}</div></div></section>
     <section class="detail-section"><h3>Từ vựng chứa 「${esc(k.char)}」</h3>${vocabList(row.words, k.char)}</section>`;
@@ -160,7 +179,7 @@ function renderDetail(row) {
 
 function renderKanaDetail(row) {
   const v = row.item;
-  detailPanel.innerHTML = `<div class="detail-head"><div><p class="eyebrow">Hiragana thuần${row.lessons.length ? ' · Bài ' + row.lessons.join(', ') : ''}</p><h2>${esc(v.word)}</h2><p>${esc(v.kana)} · ${esc(v.meanings.join(' / '))}</p></div><button class="remember-btn" data-remember="${esc(row.key)}">✓ nhớ</button></div>
+  $('#modalContent').innerHTML = `<div class="detail-head"><div><p class="eyebrow">Hiragana thuần${row.lessons.length ? ' · Bài ' + row.lessons.join(', ') : ''}</p><h2 class="kana-title">${esc(v.word)}</h2><p>${esc(v.kana)} · ${esc(v.meanings.join(' / '))}</p></div><button class="remember-btn" data-remember="${esc(row.key)}">✓</button></div>
     <section class="detail-section"><h3>Mẫu đi kèm</h3>${particleList(v, '')}</section>`;
 }
 
@@ -169,23 +188,15 @@ function vocabList(words, char) {
   return words.map(v => `<article class="vocab-line"><div><b>${esc(v.word)}</b><span>${esc(v.kana)} · ${esc(v.meanings.join(' / '))}${(v.lessons || v.lesson) ? ' · Bài ' + (v.lessons || [v.lesson]).join(', ') : ''}</span></div>${particleList(v, char)}${kanjiButtons(v.word, char)}</article>`).join('');
 }
 
-function particleList(v, char) {
-  const items = v.particles || DEFAULT_PARTICLES[char] || inferParticles(v);
-  return `<ul class="particle-list">${items.map(x => `<li>${esc(x)}</li>`).join('')}</ul>`;
-}
-
+function particleList(v, char) { const items = v.particles || DEFAULT_PARTICLES[char] || inferParticles(v); return `<ul class="particle-list">${items.map(x => `<li>${esc(x)}</li>`).join('')}</ul>`; }
 function inferParticles(v) {
-  if (v.meanings.some(m => /ăn|uống|đọc|viết|mua|xem|nghe|rửa|giặt|mở|đóng|bán|gửi|dùng|làm|tạo/.test(m))) return [`${v.word}を...`, `場所で${v.word}`];
-  if (v.meanings.some(m => /đi|đến|về|vào|ra|sống|tới/.test(m))) return [`場所に/へ${v.word}`, `場所で${v.word}`];
-  if (v.meanings.some(m => /cao|thấp|rộng|hẹp|mới|cũ|rẻ|đắt|dài|ngắn|sáng|tối|gần|xa|nhiều|ít/.test(m))) return [`Nは${v.word}です`, `とても${v.word}`, `あまり${v.word}ないです`];
+  if (v.meanings.some(m => /ăn|uống|đọc|viết|mua|xem|nghe|rửa|giặt|mở|đóng|bán|gửi|dùng|làm|tạo|đặt|bật|tắt|nộp|trả|gọi|đón|chụp|cắt|mượn/.test(m))) return [`Nを${v.word}`, `場所で${v.word}`];
+  if (v.meanings.some(m => /đi|đến|về|vào|ra|sống|tới|lên|xuống|rẽ|băng qua|leo/.test(m))) return [`場所に/へ${v.word}`, `場所で${v.word}`];
+  if (v.meanings.some(m => /cao|thấp|rộng|hẹp|mới|cũ|rẻ|đắt|dài|ngắn|sáng|tối|gần|xa|nhiều|ít|mạnh|yếu|trẻ|ngon|vui/.test(m))) return [`Nは${v.word}です`, `とても${v.word}`, `あまり${v.word}ないです`];
   return [`Nは${v.word}です`, `${v.word}があります/います`];
 }
 
-function kanjiButtons(word, current) {
-  const chars = [...word].filter(ch => KANJI.some(k => k.char === ch) && ch !== current);
-  return chars.length ? `<div class="kanji-links">${chars.map(ch => `<button data-open-kanji="${esc(ch)}">${esc(ch)}</button>`).join('')}</div>` : '';
-}
-
+function kanjiButtons(word, current) { const chars = [...word].filter(ch => KANJI.some(k => k.char === ch) && ch !== current); return chars.length ? `<div class="kanji-links">${chars.map(ch => `<button data-open-kanji="${esc(ch)}">${esc(ch)}</button>`).join('')}</div>` : ''; }
 function wordsForKanji(char) { return VOCAB.filter(v => v.word.includes(char)).sort((a, b) => gojuonKey(a.kana).localeCompare(gojuonKey(b.kana), 'ja')); }
 function groupsFor(char) { const ids = Object.entries(GROUPS).filter(([, g]) => g.chars.includes(char)).map(([id]) => id); return ids.length ? ids : ['other']; }
 function groupRank(row) { const first = row.groups[0]; return first === 'kana' ? 99 : Number(first.replace('g', '')) || 50; }
@@ -198,8 +209,6 @@ function normalize(parts) { return parts.flat(Infinity).filter(Boolean).join(' '
 function reading(list) { return list?.length ? list.map(x => `<span>${esc(x)}</span>`).join('') : '<span class="muted">—</span>'; }
 function toggleLearned(key) { learnedSet.has(key) ? learnedSet.delete(key) : learnedSet.add(key); localStorage.setItem(learnedKey, JSON.stringify([...learnedSet])); }
 function esc(v) { return String(v ?? '').replace(/[&<>"]/g, s => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[s])); }
-
-function gojuonColumn(kana = '') { const ch = kana[0] || ''; if ('あいうえお'.includes(ch)) return 'あ'; if ('かきくけこがぎぐげご'.includes(ch)) return 'か'; if ('さしすせそざじずぜぞ'.includes(ch)) return 'さ'; if ('たちつてとだぢづでど'.includes(ch)) return 'た'; if ('なにぬねの'.includes(ch)) return 'な'; if ('はひふへほばびぶべぼぱぴぷぺぽ'.includes(ch)) return 'は'; if ('まみむめも'.includes(ch)) return 'ま'; if ('やゆよ'.includes(ch)) return 'や'; if ('らりるれろ'.includes(ch)) return 'ら'; if ('わをん'.includes(ch)) return 'わ'; return '#'; }
 function gojuonKey(kana = '') { const order = 'あいうえおかがきぎくぐけげこごさざしじすずせぜそぞただちぢつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもやゆよらりるれろわをん'; return [...kana].map(ch => String(order.indexOf(ch)).padStart(3, '0')).join('-') || '999'; }
 function kanaToRomaji(input = '') { const map = { 'きゃ':'kya','きゅ':'kyu','きょ':'kyo','しゃ':'sha','しゅ':'shu','しょ':'sho','ちゃ':'cha','ちゅ':'chu','ちょ':'cho','にゃ':'nya','にゅ':'nyu','にょ':'nyo','ひゃ':'hya','ひゅ':'hyu','ひょ':'hyo','みゃ':'mya','みゅ':'myu','みょ':'myo','りゃ':'rya','りゅ':'ryu','りょ':'ryo','ぎゃ':'gya','ぎゅ':'gyu','ぎょ':'gyo','じゃ':'ja','じゅ':'ju','じょ':'jo','あ':'a','い':'i','う':'u','え':'e','お':'o','か':'ka','き':'ki','く':'ku','け':'ke','こ':'ko','さ':'sa','し':'shi','す':'su','せ':'se','そ':'so','た':'ta','ち':'chi','つ':'tsu','て':'te','と':'to','な':'na','に':'ni','ぬ':'nu','ね':'ne','の':'no','は':'ha','ひ':'hi','ふ':'fu','へ':'he','ほ':'ho','ま':'ma','み':'mi','む':'mu','め':'me','も':'mo','や':'ya','ゆ':'yu','よ':'yo','ら':'ra','り':'ri','る':'ru','れ':'re','ろ':'ro','わ':'wa','を':'wo','ん':'n','が':'ga','ぎ':'gi','ぐ':'gu','げ':'ge','ご':'go','ざ':'za','じ':'ji','ず':'zu','ぜ':'ze','ぞ':'zo','だ':'da','ぢ':'ji','づ':'zu','で':'de','ど':'do','ば':'ba','び':'bi','ぶ':'bu','べ':'be','ぼ':'bo','ぱ':'pa','ぴ':'pi','ぷ':'pu','ぺ':'pe','ぽ':'po','ー':'-' }; let out = ''; for (let i = 0; i < input.length; i++) { const two = input.slice(i, i + 2); if (map[two]) { out += map[two]; i++; } else out += map[input[i]] || input[i]; } return out.toLowerCase(); }
 
