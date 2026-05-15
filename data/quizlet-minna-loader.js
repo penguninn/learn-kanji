@@ -6,6 +6,9 @@
   const hasKanji = ch => data.kanji.some(k => k.char === ch);
 
   injectLayoutFix();
+  injectSyncScript('./data/study-groups.js');
+  injectSyncScript('./data/user-meaning-edits.js');
+  injectSyncScript('./data/dev-save-hook.js');
 
   window.importMinnaLesson = function importMinnaLesson(lesson, setId, raw) {
     const source = `Quizlet Minna bài ${lesson} - ${setId}`;
@@ -42,7 +45,7 @@
           data.kanji.push({
             char: ch,
             level: 'N5',
-            meanings: [`Quizlet: ${word}`],
+            meanings: [word],
             onyomi: [],
             kunyomi: []
           });
@@ -57,6 +60,11 @@
     link.rel = 'stylesheet';
     link.href = './layout-fix.css';
     document.head.appendChild(link);
+  }
+
+  function injectSyncScript(src) {
+    if (document.querySelector(`script[src="${src}"]`)) return;
+    document.write(`<script src="${src}"><\/script>`);
   }
 
   function inferPatterns(word, kana) {
