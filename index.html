@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanji N5/N4 Study</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">JLPT Kanji Trainer</p>
+      <h1>Học Kanji N5/N4</h1>
+      <p class="subtitle">Không DB, dữ liệu nằm trong <code>data/kanji-data.js</code>. Có lọc cấp độ, từ ghép, đồng âm và animation nét viết.</p>
+    </div>
+    <div class="header-actions">
+      <button id="resetProgressBtn" class="ghost-btn">Reset tiến độ</button>
+      <button id="quizBtn" class="primary-btn">Quiz nhanh</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <section class="panel">
+        <label class="field-label" for="searchInput">Tìm Kanji / kana / nghĩa</label>
+        <input id="searchInput" class="search-input" placeholder="vd: 食, たべる, ăn, atsui..." />
+      </section>
+
+      <section class="panel">
+        <p class="field-label">Cấp độ</p>
+        <label class="check"><input type="checkbox" value="N5" class="levelFilter" checked /> N5</label>
+        <label class="check"><input type="checkbox" value="N4" class="levelFilter" checked /> N4</label>
+        <label class="check"><input type="checkbox" value="Extra" class="levelFilter" /> Extra/đồng âm</label>
+      </section>
+
+      <section class="panel">
+        <p class="field-label">Chế độ xem</p>
+        <div class="segmented" role="tablist">
+          <button class="modeBtn active" data-mode="kanji">Kanji</button>
+          <button class="modeBtn" data-mode="vocab">Từ vựng</button>
+          <button class="modeBtn" data-mode="homophone">Đồng âm</button>
+        </div>
+      </section>
+
+      <section class="panel stats" id="statsPanel"></section>
+    </aside>
+
+    <section class="content">
+      <div id="quizPanel" class="quiz hidden"></div>
+      <div id="resultArea" class="result-grid"></div>
+    </section>
+  </main>
+
+  <dialog id="detailDialog" class="detail-dialog">
+    <button id="closeDialogBtn" class="close-btn" aria-label="Đóng">×</button>
+    <div id="detailContent"></div>
+  </dialog>
+
+  <script src="./data/kanji-data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
