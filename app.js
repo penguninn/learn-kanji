@@ -39,21 +39,25 @@ const DEFAULT_PARTICLES = {
 const VOCAB = dedupe([...RAW_VOCAB, ...EXTRA_VOCAB]);
 const learnedKey = 'kanji-list-study.learned';
 const learnedSet = new Set(JSON.parse(localStorage.getItem(learnedKey) || '[]'));
-const state = { query: '', levels: new Set(['N5', 'N4', 'Extra', 'Kana']), group: 'all', sortMode: 'gojuon', selectedKey: '' };
+const state = { query: '', levels: new Set(['N5', 'N4', 'Extra', 'Kana']), group: 'all', lesson: 'all', sortMode: 'gojuon', selectedKey: '' };
 
 const $ = s => document.querySelector(s);
 const resultBody = $('#resultBody');
 const emptyState = $('#emptyState');
 const detailPanel = $('#detailPanel');
 const groupFilter = $('#groupFilter');
+const lessonFilter = $('#lessonFilter');
 const levelFilters = [...document.querySelectorAll('.levelFilter')];
 
 init();
 
 function init() {
   groupFilter.innerHTML = '<option value="all">Tất cả nhóm</option>' + Object.entries(GROUPS).map(([id, g]) => `<option value="${id}">${g.label}</option>`).join('') + '<option value="kana">Từ hiragana thuần</option>';
+  if (lessonFilter) lessonFilter.innerHTML = '<option value="all">Tất cả bài</option>' + getLessons().map(n => `<option value="${n}">Bài ${n}</option>`).join('');
+
   $('#searchInput').addEventListener('input', e => { state.query = e.target.value.trim().toLowerCase(); render(); });
   groupFilter.addEventListener('change', e => { state.group = e.target.value; render(); });
+  if (lessonFilter) lessonFilter.addEventListener('change', e => { state.lesson = e.target.value; state.selectedKey = ''; detailPanel.innerHTML = '<p class="muted">Chọn một hàng để xem chi tiết.</p>'; render(); });
   $('#sortMode').addEventListener('change', e => { state.sortMode = e.target.value; render(); });
   $('#resetProgressBtn').addEventListener('click', () => { learnedSet.clear(); localStorage.removeItem(learnedKey); render(); });
   $('#collapseBtn').addEventListener('click', () => { state.selectedKey = ''; detailPanel.innerHTML = '<p class="muted">Chọn một hàng để xem chi tiết.</p>'; render(); });
@@ -63,20 +67,35 @@ function init() {
   render();
 }
 
+function getLessons() {
+  return [...new Set(VOCAB.flatMap(v => v.lessons || (v.lesson ? [v.lesson] : [])))].filter(Boolean).sort((a, b) => a - b);
+}
+
 function buildRows() {
   const kanjiRows = KANJI.map(k => {
-    const words = wordsForKanji(k.char);
+    const words = wordsForKanji(k.char).filter(wordMatchesLesson);
     const main = words[0] || null;
-    return { type: 'kanji', key: `k-${k.char}`, char: k.char, kana: main?.kana || firstKun(k) || '', mainWord: main?.word || k.char, meaning: main?.meanings?.join(' / ') || k.meanings.join(' / '), level: k.level, groups: groupsFor(k.char), item: k, words };
+    return { type: 'kanji', key: `k-${k.char}`, char: k.char, kana: main?.kana || firstKun(k) || '', mainWord: main?.word || k.char, meaning: main?.meanings?.join(' / ') || k.meanings.join(' / '), level: k.level, groups: groupsFor(k.char), lessons: lessonsForWords(words), item: k, words };
   });
-  const kanaRows = VOCAB.filter(v => !hasKanji(v.word)).map(v => ({ type: 'kana', key: `v-${v.word}-${v.kana}`, char: '—', kana: v.kana, mainWord: v.word, meaning: v.meanings.join(' / '), level: v.level, groups: ['kana'], item: v, words: [v] }));
+  const kanaRows = VOCAB.filter(v => !hasKanji(v.word)).filter(wordMatchesLesson).map(v => ({ type: 'kana', key: `v-${v.word}-${v.kana}`, char: '—', kana: v.kana, mainWord: v.word, meaning: v.meanings.join(' / '), level: v.level, groups: ['kana'], lessons: lessonsForWords([v]), item: v, words: [v] }));
   return [...kanjiRows, ...kanaRows].filter(rowMatches).sort(sortRows);
+}
+
+function wordMatchesLesson(v) {
+  if (state.lesson === 'all') return true;
+  return (v.lessons || (v.lesson ? [v.lesson] : [])).includes(Number(state.lesson));
+}
+
+function lessonsForWords(words) {
+  return [...new Set(words.flatMap(v => v.lessons || (v.lesson ? [v.lesson] : [])))].filter(Boolean).sort((a, b) => a - b);
 }
 
 function rowMatches(row) {
   if (!state.levels.has(row.level)) return false;
   if (state.group !== 'all' && !row.groups.includes(state.group)) return false;
-  const text = normalize([row.char, row.kana, row.mainWord, row.meaning, groupLabels(row.groups), row.words.map(w => [w.word, w.kana, w.meanings])]);
+  if (state.lesson !== 'all' && !row.lessons.includes(Number(state.lesson))) return false;
+  if (state.lesson !== 'all' && row.type === 'kanji' && row.words.length === 0) return false;
+  const text = normalize([row.char, row.kana, row.mainWord, row.meaning, groupLabels(row.groups), row.lessons.map(x => `bài ${x}`), row.words.map(w => [w.word, w.kana, w.meanings])]);
   return !state.query || text.includes(state.query) || kanaToRomaji(text).includes(state.query);
 }
 
@@ -89,19 +108,21 @@ function sortRows(a, b) {
 function render() {
   const rows = buildRows();
   $('#resultTitle').textContent = `Danh sách học (${rows.length})`;
-  $('#statsPanel').innerHTML = `<b>${rows.length}</b> dòng đang hiển thị<br><b>${learnedSet.size}</b> mục đã nhớ<br><span>${state.group === 'all' ? 'Tất cả nhóm' : (GROUPS[state.group]?.label || 'Hiragana thuần')}</span>`;
+  const lessonLabel = state.lesson === 'all' ? 'Tất cả bài' : `Bài ${state.lesson}`;
+  $('#statsPanel').innerHTML = `<b>${rows.length}</b> dòng đang hiển thị<br><b>${learnedSet.size}</b> mục đã nhớ<br><span>${lessonLabel}</span><br><span>${state.group === 'all' ? 'Tất cả nhóm' : (GROUPS[state.group]?.label || 'Hiragana thuần')}</span>`;
   emptyState.classList.toggle('hidden', rows.length > 0);
   resultBody.innerHTML = rows.map(rowTemplate).join('');
 }
 
 function rowTemplate(r) {
   const learned = learnedSet.has(r.key) || learnedSet.has(r.char);
+  const lessonTags = r.lessons.slice(0, 4).map(n => `<span class="tag lesson-tag">B${n}</span>`).join('') + (r.lessons.length > 4 ? `<span class="tag">+${r.lessons.length - 4}</span>` : '');
   return `<tr class="study-row ${state.selectedKey === r.key ? 'selected' : ''}" data-key="${esc(r.key)}" data-type="${r.type}">
     <td><span class="kana-col">${esc(gojuonColumn(r.kana))}</span><small>${esc(r.kana || '—')}</small></td>
     <td class="kanji-cell">${esc(r.char)}</td>
     <td><strong>${esc(r.mainWord)}</strong><small>${esc(r.level)}</small></td>
     <td>${esc(r.meaning)}</td>
-    <td>${r.groups.map(g => `<span class="tag">${esc(shortGroup(g))}</span>`).join('')}</td>
+    <td>${r.groups.map(g => `<span class="tag">${esc(shortGroup(g))}</span>`).join('')}${lessonTags}</td>
     <td><button class="remember-btn ${learned ? 'active' : ''}" data-remember="${esc(r.key)}">${learned ? '✓' : '+'}</button></td>
   </tr>`;
 }
@@ -130,7 +151,7 @@ function onDetailClick(e) {
 function renderDetail(row) {
   if (row.type === 'kana') return renderKanaDetail(row);
   const k = row.item;
-  detailPanel.innerHTML = `<div class="detail-head"><div><p class="eyebrow">${esc(row.level)} · ${esc(groupLabels(row.groups))}</p><h2>${esc(k.char)}</h2><p>${esc(k.meanings.join(' / '))}</p></div><button class="remember-btn" data-remember="${esc(row.key)}">✓ nhớ</button></div>
+  detailPanel.innerHTML = `<div class="detail-head"><div><p class="eyebrow">${esc(row.level)} · ${esc(groupLabels(row.groups))}${row.lessons.length ? ' · Bài ' + row.lessons.join(', ') : ''}</p><h2>${esc(k.char)}</h2><p>${esc(k.meanings.join(' / '))}</p></div><button class="remember-btn" data-remember="${esc(row.key)}">✓ nhớ</button></div>
     <div id="strokeTarget" class="stroke-box"></div>
     <section class="detail-section"><h3>Âm On/Kun</h3><div class="reading-grid"><div><b>On</b>${reading(k.onyomi)}</div><div><b>Kun</b>${reading(k.kunyomi)}</div></div></section>
     <section class="detail-section"><h3>Từ vựng chứa 「${esc(k.char)}」</h3>${vocabList(row.words, k.char)}</section>`;
@@ -139,13 +160,13 @@ function renderDetail(row) {
 
 function renderKanaDetail(row) {
   const v = row.item;
-  detailPanel.innerHTML = `<div class="detail-head"><div><p class="eyebrow">Hiragana thuần</p><h2>${esc(v.word)}</h2><p>${esc(v.kana)} · ${esc(v.meanings.join(' / '))}</p></div><button class="remember-btn" data-remember="${esc(row.key)}">✓ nhớ</button></div>
+  detailPanel.innerHTML = `<div class="detail-head"><div><p class="eyebrow">Hiragana thuần${row.lessons.length ? ' · Bài ' + row.lessons.join(', ') : ''}</p><h2>${esc(v.word)}</h2><p>${esc(v.kana)} · ${esc(v.meanings.join(' / '))}</p></div><button class="remember-btn" data-remember="${esc(row.key)}">✓ nhớ</button></div>
     <section class="detail-section"><h3>Mẫu đi kèm</h3>${particleList(v, '')}</section>`;
 }
 
 function vocabList(words, char) {
   if (!words.length) return '<p class="muted">Chưa có từ ghép trong data.</p>';
-  return words.map(v => `<article class="vocab-line"><div><b>${esc(v.word)}</b><span>${esc(v.kana)} · ${esc(v.meanings.join(' / '))}</span></div>${particleList(v, char)}${kanjiButtons(v.word, char)}</article>`).join('');
+  return words.map(v => `<article class="vocab-line"><div><b>${esc(v.word)}</b><span>${esc(v.kana)} · ${esc(v.meanings.join(' / '))}${(v.lessons || v.lesson) ? ' · Bài ' + (v.lessons || [v.lesson]).join(', ') : ''}</span></div>${particleList(v, char)}${kanjiButtons(v.word, char)}</article>`).join('');
 }
 
 function particleList(v, char) {
