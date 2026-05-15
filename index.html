@@ -11,7 +11,7 @@
     <div>
       <p class="eyebrow">JLPT N5/N4</p>
       <h1>Kanji & Từ vựng theo danh sách</h1>
-      <p class="subtitle">Lọc theo cấp độ, nhóm Kanji, cột あいうえお. Bấm vào từng hàng để xem cách viết, âm On/Kun, từ ghép và trợ từ đi kèm.</p>
+      <p class="subtitle">Lọc theo cấp độ, nhóm Kanji, bài Minna, cột あいうえお. Bấm vào từng hàng để xem cách viết, âm On/Kun, từ ghép và trợ từ đi kèm.</p>
     </div>
     <button id="resetProgressBtn" class="plain-btn">Reset đã nhớ</button>
   </header>
@@ -30,6 +30,11 @@
         <label><input type="checkbox" value="Extra" class="levelFilter" checked /> Extra/đồng âm</label>
         <label><input type="checkbox" value="Kana" class="levelFilter" checked /> Hiragana thuần</label>
       </section>
+
+      <label class="field">
+        <span>Bài Minna</span>
+        <select id="lessonFilter"></select>
+      </label>
 
       <label class="field">
         <span>Nhóm từ vựng</span>
@@ -66,7 +71,7 @@
                 <th>Kanji</th>
                 <th>Từ hay dùng</th>
                 <th>Nghĩa</th>
-                <th>Nhóm</th>
+                <th>Nhóm/Bài</th>
                 <th>Nhớ</th>
               </tr>
             </thead>
@@ -84,7 +89,11 @@
 
   <script src="./data/kanji-data.js"></script>
   <script src="./data/kanji-extra.js"></script>
-  <script src="./data/quizlet-minna-bai-1.js"></script>
+  <script src="./data/quizlet-minna-loader.js"></script>
+  <script src="./data/quizlet-minna-bai-01-lines.js"></script>
+  <script src="./data/quizlet-minna-bai-02-lines.js"></script>
+  <script src="./data/quizlet-minna-bai-03-lines.js"></script>
+  <script src="./data/quizlet-minna-bai-04-lines.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>
