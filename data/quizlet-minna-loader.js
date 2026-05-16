@@ -8,7 +8,7 @@
   injectLayoutFix();
   injectSyncScript('./data/study-groups.js');
   injectSyncScript('./data/kanji-meta.js');
-  injectSyncScript('./data/user-meaning-edits.js');
+  injectSyncScript('./data/han-viet.js');
   injectSyncScript('./data/dev-save-hook.js');
 
   window.importMinnaLesson = function importMinnaLesson(lesson, setId, raw) {
