@@ -6,162 +6,162 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "私",
         "kana": "わたし",
-        "meaning": ""
+        "meaning": "tôi"
       },
       {
         "word": "私達",
         "kana": "わたしたち",
-        "meaning": ""
+        "meaning": "chúng tôi / chúng ta"
       },
       {
         "word": "貴方",
         "kana": "あなた",
-        "meaning": ""
+        "meaning": "bạn"
       },
       {
         "word": "あの人",
         "kana": "あのひと",
-        "meaning": ""
+        "meaning": "người kia"
       },
       {
         "word": "あの方",
         "kana": "あのかた",
-        "meaning": ""
+        "meaning": "vị kia / người kia, lịch sự"
       },
       {
         "word": "皆さん",
         "kana": "みなさん",
-        "meaning": ""
+        "meaning": "mọi người / các bạn"
       },
       {
         "word": "～君",
         "kana": "～くん",
-        "meaning": ""
+        "meaning": "bạn / em, cách gọi thân mật"
       },
       {
         "word": "～人",
         "kana": "～じん",
-        "meaning": ""
+        "meaning": "người"
       },
       {
         "word": "先生",
         "kana": "せんせい",
-        "meaning": ""
+        "meaning": "giáo viên / thầy cô"
       },
       {
         "word": "教師",
         "kana": "きょうし",
-        "meaning": ""
+        "meaning": "giáo viên, dùng để nói nghề của mình"
       },
       {
         "word": "学生",
         "kana": "がくせい",
-        "meaning": ""
+        "meaning": "học sinh / sinh viên"
       },
       {
         "word": "会社員",
         "kana": "かいしゃいん",
-        "meaning": ""
+        "meaning": "nhân viên công ty"
       },
       {
         "word": "社員",
         "kana": "～しゃいん",
-        "meaning": ""
+        "meaning": "nhân viên công ty"
       },
       {
         "word": "銀行員",
         "kana": "ぎんこういん",
-        "meaning": ""
+        "meaning": "nhân viên ngân hàng"
       },
       {
         "word": "医者",
         "kana": "いしゃ",
-        "meaning": ""
+        "meaning": "bác sĩ"
       },
       {
         "word": "研究者",
         "kana": "けんきゅうしゃ",
-        "meaning": ""
+        "meaning": "nhà nghiên cứu"
       },
       {
         "word": "大学",
         "kana": "だいがく",
-        "meaning": ""
+        "meaning": "đại học"
       },
       {
         "word": "病院",
         "kana": "びょういん",
-        "meaning": ""
+        "meaning": "bệnh viện"
       },
       {
         "word": "電気",
         "kana": "でんき",
-        "meaning": ""
+        "meaning": "điện"
       },
       {
         "word": "誰",
         "kana": "だれ",
-        "meaning": ""
+        "meaning": "ai"
       },
       {
         "word": "何方",
         "kana": "どなた",
-        "meaning": ""
+        "meaning": "vị nào / ai, lịch sự"
       },
       {
         "word": "～歳",
         "kana": "～さい",
-        "meaning": ""
+        "meaning": "tuổi"
       },
       {
         "word": "何歳",
         "kana": "なんさい",
-        "meaning": ""
+        "meaning": "mấy tuổi / bao nhiêu tuổi"
       },
       {
         "word": "御幾つ",
         "kana": "おいくつ",
-        "meaning": ""
+        "meaning": "bao nhiêu tuổi, lịch sự"
       },
       {
         "word": "韓国",
         "kana": "かんこく",
-        "meaning": ""
+        "meaning": "Hàn Quốc"
       },
       {
         "word": "中国",
         "kana": "ちゅうごく",
-        "meaning": ""
+        "meaning": "Trung Quốc"
       },
       {
         "word": "日本",
         "kana": "にほん",
-        "meaning": ""
+        "meaning": "Nhật Bản"
       },
       {
         "word": "失礼ですが",
         "kana": "しつれいですが",
-        "meaning": ""
+        "meaning": "xin lỗi / thất lễ nhưng..."
       },
       {
         "word": "お名前は？",
         "kana": "おなまえは？",
-        "meaning": ""
+        "meaning": "tên bạn là gì?"
       },
       {
         "word": "初めまして",
         "kana": "はじめまして",
-        "meaning": ""
+        "meaning": "rất hân hạnh được gặp lần đầu"
       },
       {
         "word": "どうぞ宜しくお願いします",
         "kana": "どうぞよろしくおねがいします",
-        "meaning": ""
+        "meaning": "rất mong được giúp đỡ / rất hân hạnh"
       },
       {
         "word": "～から来ました",
         "kana": "～からきました",
-        "meaning": ""
+        "meaning": "đến từ..."
       }
     ]
   },
@@ -172,217 +172,217 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "本",
         "kana": "ほん",
-        "meaning": ""
+        "meaning": "sách"
       },
       {
         "word": "辞書",
         "kana": "じしょ",
-        "meaning": ""
+        "meaning": "từ điển"
       },
       {
         "word": "雑誌",
         "kana": "ざっし",
-        "meaning": ""
+        "meaning": "tạp chí"
       },
       {
         "word": "新聞",
         "kana": "しんぶん",
-        "meaning": ""
+        "meaning": "báo"
       },
       {
         "word": "手帳",
         "kana": "てちょう",
-        "meaning": ""
+        "meaning": "sổ tay"
       },
       {
         "word": "名刺",
         "kana": "めいし",
-        "meaning": ""
+        "meaning": "danh thiếp"
       },
       {
         "word": "鉛筆",
         "kana": "えんぴつ",
-        "meaning": ""
+        "meaning": "bút chì"
       },
       {
         "word": "鍵",
         "kana": "かぎ",
-        "meaning": ""
+        "meaning": "chìa khóa"
       },
       {
         "word": "時計",
         "kana": "とけい",
-        "meaning": ""
+        "meaning": "đồng hồ"
       },
       {
         "word": "傘",
         "kana": "かさ",
-        "meaning": ""
+        "meaning": "ô / dù"
       },
       {
         "word": "鞄",
         "kana": "かばん",
-        "meaning": ""
+        "meaning": "cặp / túi xách"
       },
       {
         "word": "自動車",
         "kana": "じどうしゃ",
-        "meaning": ""
+        "meaning": "ô tô"
       },
       {
         "word": "机",
         "kana": "つくえ",
-        "meaning": ""
+        "meaning": "bàn"
       },
       {
         "word": "椅子",
         "kana": "いす",
-        "meaning": ""
+        "meaning": "ghế"
       },
       {
         "word": "英語",
         "kana": "えいご",
-        "meaning": ""
+        "meaning": "tiếng Anh"
       },
       {
         "word": "日本語",
         "kana": "にほんご",
-        "meaning": ""
+        "meaning": "tiếng Nhật"
       },
       {
         "word": "～語",
         "kana": "～ご",
-        "meaning": ""
+        "meaning": "tiếng / ngôn ngữ"
       },
       {
         "word": "何",
         "kana": "なん",
-        "meaning": ""
+        "meaning": "cái gì / gì"
       },
       {
         "word": "違います",
         "kana": "ちがいます",
-        "meaning": ""
+        "meaning": "khác / không đúng"
       },
       {
         "word": "ほんの気持ちです",
         "kana": "ほんのきもちです",
-        "meaning": ""
+        "meaning": "chỉ là chút lòng thành"
       },
       {
         "word": "どうも有り難う御座います",
         "kana": "どうもありがとうございます",
-        "meaning": ""
+        "meaning": "cảm ơn rất nhiều"
       },
       {
         "word": "これからお世話になります",
         "kana": "これからおせわになります",
-        "meaning": ""
+        "meaning": "từ nay mong được giúp đỡ"
       },
       {
         "word": "こちらこそ宜しく",
         "kana": "こちらこそよろしく",
-        "meaning": ""
+        "meaning": "chính tôi mới mong được giúp đỡ"
       },
       {
         "word": "教室",
         "kana": "きょうしつ",
-        "meaning": ""
+        "meaning": "phòng học"
       },
       {
         "word": "食堂",
         "kana": "しょくどう",
-        "meaning": ""
+        "meaning": "nhà ăn / căng-tin"
       },
       {
         "word": "事務所",
         "kana": "じむしょ",
-        "meaning": ""
+        "meaning": "văn phòng"
       },
       {
         "word": "会議室",
         "kana": "かいぎしつ",
-        "meaning": ""
+        "meaning": "phòng họp"
       },
       {
         "word": "受付",
         "kana": "うけつけ",
-        "meaning": ""
+        "meaning": "quầy tiếp tân"
       },
       {
         "word": "部屋",
         "kana": "へや",
-        "meaning": ""
+        "meaning": "phòng"
       },
       {
         "word": "階段",
         "kana": "かいだん",
-        "meaning": ""
+        "meaning": "cầu thang"
       },
       {
         "word": "国",
         "kana": "くに",
-        "meaning": ""
+        "meaning": "đất nước"
       },
       {
         "word": "会社",
         "kana": "かいしゃ",
-        "meaning": ""
+        "meaning": "công ty"
       },
       {
         "word": "家",
         "kana": "うち",
-        "meaning": ""
+        "meaning": "nhà"
       },
       {
         "word": "電車",
         "kana": "でんしゃ",
-        "meaning": ""
+        "meaning": "tàu điện"
       },
       {
         "word": "靴",
         "kana": "くつ",
-        "meaning": ""
+        "meaning": "giày"
       },
       {
         "word": "売り場",
         "kana": "うりば",
-        "meaning": ""
+        "meaning": "quầy bán hàng"
       },
       {
         "word": "地下",
         "kana": "ちか",
-        "meaning": ""
+        "meaning": "tầng hầm / dưới đất"
       },
       {
         "word": "幾ら",
         "kana": "いくら",
-        "meaning": ""
+        "meaning": "bao nhiêu tiền"
       },
       {
         "word": "百",
         "kana": "ひゃく",
-        "meaning": ""
+        "meaning": "trăm"
       },
       {
         "word": "千",
         "kana": "せん",
-        "meaning": ""
+        "meaning": "nghìn"
       },
       {
         "word": "万",
         "kana": "まん",
-        "meaning": ""
+        "meaning": "vạn / mười nghìn"
       },
       {
         "word": "見せて下さい",
         "kana": "(を）みせてください",
-        "meaning": ""
+        "meaning": "cho tôi xem với"
       },
       {
         "word": "下さい",
         "kana": "じゃ（~を）ください",
-        "meaning": ""
+        "meaning": "làm ơn cho tôi / hãy đưa cho tôi"
       }
     ]
   },
@@ -393,102 +393,102 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "教室",
         "kana": "きょうしつ",
-        "meaning": ""
+        "meaning": "phòng học"
       },
       {
         "word": "食堂",
         "kana": "しょくどう",
-        "meaning": ""
+        "meaning": "nhà ăn / căng-tin"
       },
       {
         "word": "事務所",
         "kana": "じむしょ",
-        "meaning": ""
+        "meaning": "văn phòng"
       },
       {
         "word": "会議室",
         "kana": "かいぎしつ",
-        "meaning": ""
+        "meaning": "phòng họp"
       },
       {
         "word": "受付",
         "kana": "うけつけ",
-        "meaning": ""
+        "meaning": "quầy tiếp tân"
       },
       {
         "word": "部屋",
         "kana": "へや",
-        "meaning": ""
+        "meaning": "phòng"
       },
       {
         "word": "階段",
         "kana": "かいだん",
-        "meaning": ""
+        "meaning": "cầu thang"
       },
       {
         "word": "国",
         "kana": "くに",
-        "meaning": ""
+        "meaning": "đất nước"
       },
       {
         "word": "会社",
         "kana": "かいしゃ",
-        "meaning": ""
+        "meaning": "công ty"
       },
       {
         "word": "家",
         "kana": "うち",
-        "meaning": ""
+        "meaning": "nhà"
       },
       {
         "word": "電車",
         "kana": "でんしゃ",
-        "meaning": ""
+        "meaning": "tàu điện"
       },
       {
         "word": "靴",
         "kana": "くつ",
-        "meaning": ""
+        "meaning": "giày"
       },
       {
         "word": "売り場",
         "kana": "うりば",
-        "meaning": ""
+        "meaning": "quầy bán hàng"
       },
       {
         "word": "地下",
         "kana": "ちか",
-        "meaning": ""
+        "meaning": "tầng hầm / dưới đất"
       },
       {
         "word": "幾ら",
         "kana": "いくら",
-        "meaning": ""
+        "meaning": "bao nhiêu tiền"
       },
       {
         "word": "百",
         "kana": "ひゃく",
-        "meaning": ""
+        "meaning": "trăm"
       },
       {
         "word": "千",
         "kana": "せん",
-        "meaning": ""
+        "meaning": "nghìn"
       },
       {
         "word": "万",
         "kana": "まん",
-        "meaning": ""
+        "meaning": "vạn / mười nghìn"
       },
       {
         "word": "見せて下さい",
         "kana": "(を）みせてください",
-        "meaning": ""
+        "meaning": "cho tôi xem với"
       },
       {
         "word": "下さい",
         "kana": "じゃ（~を）ください",
-        "meaning": ""
+        "meaning": "làm ơn cho tôi / hãy đưa cho tôi"
       }
     ]
   },
@@ -499,207 +499,207 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "何番",
         "kana": "なんばん",
-        "meaning": ""
+        "meaning": "số mấy"
       },
       {
         "word": "美術館",
         "kana": "びじゅつかん",
-        "meaning": ""
+        "meaning": "bảo tàng mỹ thuật"
       },
       {
         "word": "昼休み",
         "kana": "ひるやすみ",
-        "meaning": ""
+        "meaning": "nghỉ trưa"
       },
       {
         "word": "銀行",
         "kana": "ぎんこう",
-        "meaning": ""
+        "meaning": "ngân hàng"
       },
       {
         "word": "明日",
         "kana": "あした",
-        "meaning": ""
+        "meaning": "ngày mai"
       },
       {
         "word": "明後日",
         "kana": "あさって",
-        "meaning": ""
+        "meaning": "ngày kia"
       },
       {
         "word": "毎晩",
         "kana": "まいばん",
-        "meaning": ""
+        "meaning": "mỗi tối"
       },
       {
         "word": "図書館",
         "kana": "としょかん",
-        "meaning": ""
+        "meaning": "thư viện"
       },
       {
         "word": "今日",
         "kana": "きょう",
-        "meaning": ""
+        "meaning": "hôm nay"
       },
       {
         "word": "昨日",
         "kana": "きのう",
-        "meaning": ""
+        "meaning": "hôm qua"
       },
       {
         "word": "午前",
         "kana": "ごぜん",
-        "meaning": ""
+        "meaning": "buổi sáng / trước trưa"
       },
       {
         "word": "寝ます",
         "kana": "ねます",
-        "meaning": ""
+        "meaning": "ngủ"
       },
       {
         "word": "勉強します",
         "kana": "べんきょうします",
-        "meaning": ""
+        "meaning": "học"
       },
       {
         "word": "夜",
         "kana": "よる",
-        "meaning": ""
+        "meaning": "buổi tối / đêm"
       },
       {
         "word": "御問い合わせ",
         "kana": "おといあわせ",
-        "meaning": ""
+        "meaning": "liên hệ / hỏi thông tin"
       },
       {
         "word": "今晩",
         "kana": "こんばん",
-        "meaning": ""
+        "meaning": "tối nay"
       },
       {
         "word": "起きます",
         "kana": "おきます",
-        "meaning": ""
+        "meaning": "thức dậy"
       },
       {
         "word": "休み",
         "kana": "やすみ",
-        "meaning": ""
+        "meaning": "nghỉ / ngày nghỉ"
       },
       {
         "word": "大変ですね",
         "kana": "たいへんですね",
-        "meaning": ""
+        "meaning": "vất vả nhỉ / căng nhỉ"
       },
       {
         "word": "電話番号",
         "kana": "でんわばんごう",
-        "meaning": ""
+        "meaning": "số điện thoại"
       },
       {
         "word": "休みます",
         "kana": "やすみます",
-        "meaning": ""
+        "meaning": "nghỉ"
       },
       {
         "word": "午後",
         "kana": "ごご",
-        "meaning": ""
+        "meaning": "buổi chiều / sau trưa"
       },
       {
         "word": "～分",
         "kana": "～ふん / ～ぷん",
-        "meaning": ""
+        "meaning": "phút"
       },
       {
         "word": "朝",
         "kana": "あさ",
-        "meaning": ""
+        "meaning": "buổi sáng"
       },
       {
         "word": "今",
         "kana": "いま",
-        "meaning": ""
+        "meaning": "bây giờ"
       },
       {
         "word": "昨夜",
         "kana": "ゆうべ",
-        "meaning": ""
+        "meaning": "tối qua"
       },
       {
         "word": "今朝",
         "kana": "けさ",
-        "meaning": ""
+        "meaning": "sáng nay"
       },
       {
         "word": "何時",
         "kana": "なんじ",
-        "meaning": ""
+        "meaning": "mấy giờ"
       },
       {
         "word": "一昨日",
         "kana": "おととい",
-        "meaning": ""
+        "meaning": "hôm kia"
       },
       {
         "word": "晩",
         "kana": "ばん",
-        "meaning": ""
+        "meaning": "buổi tối"
       },
       {
         "word": "半",
         "kana": "はん",
-        "meaning": ""
+        "meaning": "rưỡi / một nửa"
       },
       {
         "word": "終わります",
         "kana": "おわります",
-        "meaning": ""
+        "meaning": "kết thúc"
       },
       {
         "word": "をお願いします",
         "kana": "～を おねがいします",
-        "meaning": ""
+        "meaning": "làm ơn cho tôi..."
       },
       {
         "word": "～時",
         "kana": "～じ",
-        "meaning": ""
+        "meaning": "giờ"
       },
       {
         "word": "毎日",
         "kana": "まいにち",
-        "meaning": ""
+        "meaning": "mỗi ngày"
       },
       {
         "word": "何分",
         "kana": "なんぷん",
-        "meaning": ""
+        "meaning": "mấy phút"
       },
       {
         "word": "番号案内",
         "kana": "ばんごうあんない",
-        "meaning": ""
+        "meaning": "dịch vụ hỏi số điện thoại"
       },
       {
         "word": "郵便局",
         "kana": "ゆうびんきょく",
-        "meaning": ""
+        "meaning": "bưu điện"
       },
       {
         "word": "毎朝",
         "kana": "まいあさ",
-        "meaning": ""
+        "meaning": "mỗi sáng"
       },
       {
         "word": "昼",
         "kana": "ひる",
-        "meaning": ""
+        "meaning": "buổi trưa"
       },
       {
         "word": "働きます",
         "kana": "はたらきます",
-        "meaning": ""
+        "meaning": "làm việc"
       }
     ]
   },
@@ -710,247 +710,247 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "行きます",
         "kana": "いきます",
-        "meaning": ""
+        "meaning": "đi"
       },
       {
         "word": "来ます",
         "kana": "きます",
-        "meaning": ""
+        "meaning": "đến"
       },
       {
         "word": "帰ります",
         "kana": "かえります",
-        "meaning": ""
+        "meaning": "về"
       },
       {
         "word": "学校",
         "kana": "がっこう",
-        "meaning": ""
+        "meaning": "trường học"
       },
       {
         "word": "駅",
         "kana": "えき",
-        "meaning": ""
+        "meaning": "nhà ga"
       },
       {
         "word": "飛行機",
         "kana": "ひこうき",
-        "meaning": ""
+        "meaning": "máy bay"
       },
       {
         "word": "船",
         "kana": "ふね",
-        "meaning": ""
+        "meaning": "tàu thuyền"
       },
       {
         "word": "電車",
         "kana": "でんしゃ",
-        "meaning": ""
+        "meaning": "tàu điện"
       },
       {
         "word": "地下鉄",
         "kana": "ちかてつ",
-        "meaning": ""
+        "meaning": "tàu điện ngầm"
       },
       {
         "word": "新幹線",
         "kana": "しんかんせん",
-        "meaning": ""
+        "meaning": "tàu Shinkansen"
       },
       {
         "word": "―番線",
         "kana": "ばんせん",
-        "meaning": ""
+        "meaning": "sân ga / tuyến số..."
       },
       {
         "word": "自転車",
         "kana": "じてんしゃ",
-        "meaning": ""
+        "meaning": "xe đạp"
       },
       {
         "word": "歩いて",
         "kana": "あるいて",
-        "meaning": ""
+        "meaning": "đi bộ"
       },
       {
         "word": "人",
         "kana": "ひと",
-        "meaning": ""
+        "meaning": "người"
       },
       {
         "word": "友達",
         "kana": "ともだち",
-        "meaning": ""
+        "meaning": "bạn bè"
       },
       {
         "word": "彼",
         "kana": "かれ",
-        "meaning": ""
+        "meaning": "anh ấy / bạn trai"
       },
       {
         "word": "彼女",
         "kana": "かのじょ",
-        "meaning": ""
+        "meaning": "cô ấy / bạn gái"
       },
       {
         "word": "家族",
         "kana": "かぞく",
-        "meaning": ""
+        "meaning": "gia đình"
       },
       {
         "word": "先週",
         "kana": "せんしゅう",
-        "meaning": ""
+        "meaning": "tuần trước"
       },
       {
         "word": "今週",
         "kana": "こんしゅう",
-        "meaning": ""
+        "meaning": "tuần này"
       },
       {
         "word": "来週",
         "kana": "らいしゅう",
-        "meaning": ""
+        "meaning": "tuần sau"
       },
       {
         "word": "先月",
         "kana": "せんげつ",
-        "meaning": ""
+        "meaning": "tháng trước"
       },
       {
         "word": "今月",
         "kana": "こんげつ",
-        "meaning": ""
+        "meaning": "tháng này"
       },
       {
         "word": "来月",
         "kana": "らいげつ",
-        "meaning": ""
+        "meaning": "tháng sau"
       },
       {
         "word": "去年",
         "kana": "きょねん",
-        "meaning": ""
+        "meaning": "năm ngoái"
       },
       {
         "word": "今年",
         "kana": "ことし",
-        "meaning": ""
+        "meaning": "năm nay"
       },
       {
         "word": "来年",
         "kana": "らいねん",
-        "meaning": ""
+        "meaning": "năm sau"
       },
       {
         "word": "―月",
         "kana": "―がつ",
-        "meaning": ""
+        "meaning": "tháng"
       },
       {
         "word": "何月",
         "kana": "なんがつ",
-        "meaning": ""
+        "meaning": "tháng mấy"
       },
       {
         "word": "１日",
         "kana": "ついたち",
-        "meaning": ""
+        "meaning": "ngày mùng 1"
       },
       {
         "word": "２日",
         "kana": "ふつか",
-        "meaning": ""
+        "meaning": "ngày mùng 2 / hai ngày"
       },
       {
         "word": "３日",
         "kana": "みっか",
-        "meaning": ""
+        "meaning": "ngày mùng 3 / ba ngày"
       },
       {
         "word": "４日",
         "kana": "よっか",
-        "meaning": ""
+        "meaning": "ngày mùng 4 / bốn ngày"
       },
       {
         "word": "５日",
         "kana": "いつか",
-        "meaning": ""
+        "meaning": "ngày mùng 5 / năm ngày"
       },
       {
         "word": "６日",
         "kana": "むいか",
-        "meaning": ""
+        "meaning": "ngày mùng 6 / sáu ngày"
       },
       {
         "word": "７日",
         "kana": "なのか",
-        "meaning": ""
+        "meaning": "ngày mùng 7 / bảy ngày"
       },
       {
         "word": "８日",
         "kana": "ようか",
-        "meaning": ""
+        "meaning": "ngày mùng 8 / tám ngày"
       },
       {
         "word": "９日",
         "kana": "ここのか",
-        "meaning": ""
+        "meaning": "ngày mùng 9 / chín ngày"
       },
       {
         "word": "１０日",
         "kana": "とおか",
-        "meaning": ""
+        "meaning": "ngày mùng 10 / mười ngày"
       },
       {
         "word": "１４日",
         "kana": "じゅうよっか",
-        "meaning": ""
+        "meaning": "ngày 14"
       },
       {
         "word": "２０日",
         "kana": "はつか",
-        "meaning": ""
+        "meaning": "ngày 20"
       },
       {
         "word": "２４日",
         "kana": "にじゅうよっか",
-        "meaning": ""
+        "meaning": "ngày 24"
       },
       {
         "word": "―日",
         "kana": "―にち",
-        "meaning": ""
+        "meaning": "ngày / mặt trời"
       },
       {
         "word": "何日",
         "kana": "なんにち",
-        "meaning": ""
+        "meaning": "ngày mấy"
       },
       {
         "word": "誕生日",
         "kana": "たんじょうび",
-        "meaning": ""
+        "meaning": "sinh nhật"
       },
       {
         "word": "普通",
         "kana": "ふつう",
-        "meaning": ""
+        "meaning": "thường / tàu thường"
       },
       {
         "word": "急行",
         "kana": "きゅうこう",
-        "meaning": ""
+        "meaning": "tàu tốc hành"
       },
       {
         "word": "特急",
         "kana": "とっきゅう",
-        "meaning": ""
+        "meaning": "tàu tốc hành đặc biệt"
       },
       {
         "word": "次の",
         "kana": "つぎの",
-        "meaning": ""
+        "meaning": "tiếp theo"
       }
     ]
   },
@@ -961,192 +961,192 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "食べます",
         "kana": "たべます",
-        "meaning": ""
+        "meaning": "ăn"
       },
       {
         "word": "飲みます",
         "kana": "のみます",
-        "meaning": ""
+        "meaning": "uống"
       },
       {
         "word": "吸います",
         "kana": "たばこをすいます",
-        "meaning": ""
+        "meaning": "hút"
       },
       {
         "word": "見ます",
         "kana": "みます",
-        "meaning": ""
+        "meaning": "xem / nhìn"
       },
       {
         "word": "聞きます",
         "kana": "ききます",
-        "meaning": ""
+        "meaning": "nghe / hỏi"
       },
       {
         "word": "読みます",
         "kana": "よみます",
-        "meaning": ""
+        "meaning": "đọc"
       },
       {
         "word": "書きます",
         "kana": "かきます",
-        "meaning": ""
+        "meaning": "viết"
       },
       {
         "word": "買います",
         "kana": "かいます",
-        "meaning": ""
+        "meaning": "mua"
       },
       {
         "word": "写真を撮ります",
         "kana": "とります [しゃしんを～]",
-        "meaning": ""
+        "meaning": "chụp ảnh"
       },
       {
         "word": "友達に会います",
         "kana": "あいます [ともだちに～]",
-        "meaning": ""
+        "meaning": "gặp bạn"
       },
       {
         "word": "御飯",
         "kana": "ごはん",
-        "meaning": ""
+        "meaning": "cơm / bữa ăn"
       },
       {
         "word": "朝ごはん",
         "kana": "あさごはん",
-        "meaning": ""
+        "meaning": "bữa sáng"
       },
       {
         "word": "昼ごはん",
         "kana": "ひるごはん",
-        "meaning": ""
+        "meaning": "bữa trưa"
       },
       {
         "word": "晩ごはん",
         "kana": "ばんごはん",
-        "meaning": ""
+        "meaning": "bữa tối"
       },
       {
         "word": "卵",
         "kana": "たまご",
-        "meaning": ""
+        "meaning": "trứng"
       },
       {
         "word": "肉",
         "kana": "にく",
-        "meaning": ""
+        "meaning": "thịt"
       },
       {
         "word": "魚",
         "kana": "さかな",
-        "meaning": ""
+        "meaning": "cá"
       },
       {
         "word": "野菜",
         "kana": "やさい",
-        "meaning": ""
+        "meaning": "rau"
       },
       {
         "word": "果物",
         "kana": "くだもの",
-        "meaning": ""
+        "meaning": "hoa quả"
       },
       {
         "word": "水",
         "kana": "みず",
-        "meaning": ""
+        "meaning": "nước"
       },
       {
         "word": "お茶",
         "kana": "おちゃ",
-        "meaning": ""
+        "meaning": "trà"
       },
       {
         "word": "紅茶",
         "kana": "こうちゃ",
-        "meaning": ""
+        "meaning": "trà đen"
       },
       {
         "word": "牛乳",
         "kana": "ぎゅうにゅう (ミルク)",
-        "meaning": ""
+        "meaning": "sữa bò"
       },
       {
         "word": "[お]酒",
         "kana": "[お]さけ",
-        "meaning": ""
+        "meaning": "rượu"
       },
       {
         "word": "映画",
         "kana": "えいが",
-        "meaning": ""
+        "meaning": "phim"
       },
       {
         "word": "手紙",
         "kana": "てがみ",
-        "meaning": ""
+        "meaning": "thư"
       },
       {
         "word": "写真",
         "kana": "しゃしん",
-        "meaning": ""
+        "meaning": "ảnh"
       },
       {
         "word": "店",
         "kana": "みせ",
-        "meaning": ""
+        "meaning": "cửa hàng"
       },
       {
         "word": "庭",
         "kana": "にわ",
-        "meaning": ""
+        "meaning": "sân vườn"
       },
       {
         "word": "宿題",
         "kana": "しゅくだい",
-        "meaning": ""
+        "meaning": "bài tập về nhà"
       },
       {
         "word": "[お]花見",
         "kana": "[お]はなみ",
-        "meaning": ""
+        "meaning": "ngắm hoa anh đào"
       },
       {
         "word": "何",
         "kana": "なに",
-        "meaning": ""
+        "meaning": "cái gì / gì"
       },
       {
         "word": "一緒に",
         "kana": "いっしょに",
-        "meaning": ""
+        "meaning": "cùng nhau"
       },
       {
         "word": "時々",
         "kana": "ときどき",
-        "meaning": ""
+        "meaning": "thỉnh thoảng"
       },
       {
         "word": "良いですね",
         "kana": "いいですね。",
-        "meaning": ""
+        "meaning": "hay đấy / được đấy"
       },
       {
         "word": "分かりました",
         "kana": "わかりました。",
-        "meaning": ""
+        "meaning": "tôi hiểu rồi"
       },
       {
         "word": "何ですか。",
         "kana": "なんですか。",
-        "meaning": ""
+        "meaning": "là cái gì?"
       },
       {
         "word": "じゃ、又明日",
         "kana": "じゃ、また[あした]。",
-        "meaning": ""
+        "meaning": "Vậy nhé, hẹn gặp lại ngày mai"
       }
     ]
   },
@@ -1157,127 +1157,127 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "切る",
         "kana": "きる",
-        "meaning": ""
+        "meaning": "cắt"
       },
       {
         "word": "送る",
         "kana": "おくる",
-        "meaning": ""
+        "meaning": "gửi / tiễn"
       },
       {
         "word": "上げる",
         "kana": "あげる",
-        "meaning": ""
+        "meaning": "cho / tặng / nâng lên"
       },
       {
         "word": "貰う",
         "kana": "もらう",
-        "meaning": ""
+        "meaning": "nhận"
       },
       {
         "word": "貸す",
         "kana": "かす",
-        "meaning": ""
+        "meaning": "cho mượn"
       },
       {
         "word": "借りる",
         "kana": "かりる",
-        "meaning": ""
+        "meaning": "mượn"
       },
       {
         "word": "手",
         "kana": "て",
-        "meaning": ""
+        "meaning": "tay"
       },
       {
         "word": "箸",
         "kana": "はし",
-        "meaning": ""
+        "meaning": "đũa"
       },
       {
         "word": "鋏",
         "kana": "はさみ",
-        "meaning": ""
+        "meaning": "kéo"
       },
       {
         "word": "消しゴム",
         "kana": "けしゴム",
-        "meaning": ""
+        "meaning": "cục tẩy"
       },
       {
         "word": "紙",
         "kana": "かみ",
-        "meaning": ""
+        "meaning": "giấy"
       },
       {
         "word": "花",
         "kana": "はな",
-        "meaning": ""
+        "meaning": "hoa"
       },
       {
         "word": "荷物",
         "kana": "にもつ",
-        "meaning": ""
+        "meaning": "hành lý"
       },
       {
         "word": "お金",
         "kana": "おかね",
-        "meaning": ""
+        "meaning": "tiền"
       },
       {
         "word": "切符",
         "kana": "きっぷ",
-        "meaning": ""
+        "meaning": "vé"
       },
       {
         "word": "父",
         "kana": "ちち",
-        "meaning": ""
+        "meaning": "bố mình"
       },
       {
         "word": "母",
         "kana": "はは",
-        "meaning": ""
+        "meaning": "mẹ mình"
       },
       {
         "word": "お父さん",
         "kana": "おとうさん",
-        "meaning": ""
+        "meaning": "bố của người khác / bố, lịch sự"
       },
       {
         "word": "お母さん",
         "kana": "おかあさん",
-        "meaning": ""
+        "meaning": "mẹ của người khác / mẹ, lịch sự"
       },
       {
         "word": "未だ",
         "kana": "まだ",
-        "meaning": ""
+        "meaning": "vẫn / chưa"
       },
       {
         "word": "御免なさい",
         "kana": "ごめんださい",
-        "meaning": ""
+        "meaning": "xin lỗi"
       },
       {
         "word": "行ってきます",
         "kana": "いってきます",
-        "meaning": ""
+        "meaning": "tôi đi rồi về"
       },
       {
         "word": "失礼します",
         "kana": "しつれいします",
-        "meaning": ""
+        "meaning": "xin phép / thất lễ"
       },
       {
         "word": "旅行",
         "kana": "りょこう",
-        "meaning": ""
+        "meaning": "du lịch"
       },
       {
         "word": "お土産",
         "kana": "おみやげ",
-        "meaning": ""
+        "meaning": "quà lưu niệm / quà mang về"
       }
     ]
   },
@@ -1288,217 +1288,217 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "綺麗（な）",
         "kana": "きれい(な)",
-        "meaning": ""
+        "meaning": "đẹp / sạch"
       },
       {
         "word": "静か(な)",
         "kana": "しずか(な)",
-        "meaning": ""
+        "meaning": "yên tĩnh"
       },
       {
         "word": "賑やか(な)",
         "kana": "にぎやか(な)",
-        "meaning": ""
+        "meaning": "nhộn nhịp"
       },
       {
         "word": "有名(な)",
         "kana": "ゆうめい(な)",
-        "meaning": ""
+        "meaning": "nổi tiếng"
       },
       {
         "word": "親切(な)",
         "kana": "しんせつ(な)",
-        "meaning": ""
+        "meaning": "tử tế"
       },
       {
         "word": "元気(な)",
         "kana": "げんき(な)",
-        "meaning": ""
+        "meaning": "khỏe / khỏe mạnh"
       },
       {
         "word": "暇(な)",
         "kana": "ひま(な)",
-        "meaning": ""
+        "meaning": "rảnh"
       },
       {
         "word": "便利(な)",
         "kana": "べんり(な)",
-        "meaning": ""
+        "meaning": "tiện lợi"
       },
       {
         "word": "素敵（な）",
         "kana": "すてき(な)",
-        "meaning": ""
+        "meaning": "tuyệt / đẹp"
       },
       {
         "word": "大きい",
         "kana": "おおきい",
-        "meaning": ""
+        "meaning": "to / lớn"
       },
       {
         "word": "小さい",
         "kana": "ちいさい",
-        "meaning": ""
+        "meaning": "nhỏ"
       },
       {
         "word": "新しい",
         "kana": "あたらしい",
-        "meaning": ""
+        "meaning": "mới"
       },
       {
         "word": "古い",
         "kana": "ふるい",
-        "meaning": ""
+        "meaning": "cũ"
       },
       {
         "word": "良い",
         "kana": "いい",
-        "meaning": ""
+        "meaning": "tốt"
       },
       {
         "word": "悪い",
         "kana": "わるい",
-        "meaning": ""
+        "meaning": "xấu / không tốt"
       },
       {
         "word": "熱い",
         "kana": "あつい",
-        "meaning": ""
+        "meaning": "nóng"
       },
       {
         "word": "寒い",
         "kana": "さむい",
-        "meaning": ""
+        "meaning": "lạnh, thời tiết"
       },
       {
         "word": "冷たい",
         "kana": "つめたい",
-        "meaning": ""
+        "meaning": "lạnh, đồ vật"
       },
       {
         "word": "難しい",
         "kana": "むずかしい",
-        "meaning": ""
+        "meaning": "khó"
       },
       {
         "word": "易しい",
         "kana": "やさしい",
-        "meaning": ""
+        "meaning": "dễ / hiền lành"
       },
       {
         "word": "高い",
         "kana": "たかい",
-        "meaning": ""
+        "meaning": "cao / đắt"
       },
       {
         "word": "安い",
         "kana": "やすい",
-        "meaning": ""
+        "meaning": "rẻ"
       },
       {
         "word": "低い",
         "kana": "ひくい",
-        "meaning": ""
+        "meaning": "thấp"
       },
       {
         "word": "美味しい",
         "kana": "おいしい",
-        "meaning": ""
+        "meaning": "ngon"
       },
       {
         "word": "面白い",
         "kana": "おもしろい",
-        "meaning": ""
+        "meaning": "thú vị"
       },
       {
         "word": "楽しい",
         "kana": "たのしい",
-        "meaning": ""
+        "meaning": "vui"
       },
       {
         "word": "白い",
         "kana": "しろい",
-        "meaning": ""
+        "meaning": "trắng"
       },
       {
         "word": "黒い",
         "kana": "くろい",
-        "meaning": ""
+        "meaning": "đen"
       },
       {
         "word": "赤い",
         "kana": "あかい",
-        "meaning": ""
+        "meaning": "đỏ"
       },
       {
         "word": "青い",
         "kana": "あおい",
-        "meaning": ""
+        "meaning": "xanh"
       },
       {
         "word": "桜",
         "kana": "さくら",
-        "meaning": ""
+        "meaning": "hoa anh đào"
       },
       {
         "word": "山",
         "kana": "やま",
-        "meaning": ""
+        "meaning": "núi"
       },
       {
         "word": "町",
         "kana": "まち",
-        "meaning": ""
+        "meaning": "thị trấn / khu phố"
       },
       {
         "word": "食べ物",
         "kana": "たべもの",
-        "meaning": ""
+        "meaning": "đồ ăn"
       },
       {
         "word": "所",
         "kana": "ところ",
-        "meaning": ""
+        "meaning": "nơi / chỗ"
       },
       {
         "word": "寮",
         "kana": "りょう",
-        "meaning": ""
+        "meaning": "ký túc xá"
       },
       {
         "word": "生活",
         "kana": "せいかつ",
-        "meaning": ""
+        "meaning": "cuộc sống / sinh hoạt"
       },
       {
         "word": "お仕事",
         "kana": "(お)しごと",
-        "meaning": ""
+        "meaning": "công việc"
       },
       {
         "word": "お元気ですか",
         "kana": "おげんきですか",
-        "meaning": ""
+        "meaning": "bạn khỏe không?"
       },
       {
         "word": "もう一杯いかがですか",
         "kana": "もう いっぱいいかがですか",
-        "meaning": ""
+        "meaning": "thêm một ly nữa nhé?"
       },
       {
         "word": "いいえ、結構です",
         "kana": "いいえ、けっこうです",
-        "meaning": ""
+        "meaning": "Không, đủ rồi / không cần đâu"
       },
       {
         "word": "そろそろ、失礼します",
         "kana": "そろそろ、しつれいします",
-        "meaning": ""
+        "meaning": "xin phép / thất lễ"
       },
       {
         "word": "又いらっしゃって下さい",
         "kana": "また いらっしゃってください",
-        "meaning": ""
+        "meaning": "lần sau lại đến nhé"
       }
     ]
   },
@@ -1509,157 +1509,157 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "分かります",
         "kana": "わかります",
-        "meaning": ""
+        "meaning": "hiểu"
       },
       {
         "word": "有ります",
         "kana": "あります",
-        "meaning": ""
+        "meaning": "có, dùng cho đồ vật"
       },
       {
         "word": "好き[な]",
         "kana": "すき[な]",
-        "meaning": ""
+        "meaning": "thích"
       },
       {
         "word": "嫌い[な]",
         "kana": "きらい[な]",
-        "meaning": ""
+        "meaning": "ghét / không thích"
       },
       {
         "word": "上手[な]",
         "kana": "じょうず[な]",
-        "meaning": ""
+        "meaning": "giỏi"
       },
       {
         "word": "下手[な]",
         "kana": "へた[な]",
-        "meaning": ""
+        "meaning": "kém"
       },
       {
         "word": "料理",
         "kana": "りょうり",
-        "meaning": ""
+        "meaning": "món ăn / nấu ăn"
       },
       {
         "word": "飲み物",
         "kana": "のみもの",
-        "meaning": ""
+        "meaning": "đồ uống"
       },
       {
         "word": "野球",
         "kana": "やきゅう",
-        "meaning": ""
+        "meaning": "bóng chày"
       },
       {
         "word": "旅行",
         "kana": "りょこう",
-        "meaning": ""
+        "meaning": "du lịch"
       },
       {
         "word": "音楽",
         "kana": "おんがく",
-        "meaning": ""
+        "meaning": "âm nhạc"
       },
       {
         "word": "歌",
         "kana": "うた",
-        "meaning": ""
+        "meaning": "bài hát"
       },
       {
         "word": "歌舞伎",
         "kana": "かぶき",
-        "meaning": ""
+        "meaning": "Kabuki"
       },
       {
         "word": "絵",
         "kana": "え",
-        "meaning": ""
+        "meaning": "tranh"
       },
       {
         "word": "字",
         "kana": "じ",
-        "meaning": ""
+        "meaning": "chữ"
       },
       {
         "word": "漢字",
         "kana": "かんじ",
-        "meaning": ""
+        "meaning": "chữ Hán"
       },
       {
         "word": "ローマ字",
         "kana": "ローマじ",
-        "meaning": ""
+        "meaning": "chữ La-tinh"
       },
       {
         "word": "細かいお金",
         "kana": "こまかいおかね",
-        "meaning": ""
+        "meaning": "tiền lẻ"
       },
       {
         "word": "時間",
         "kana": "じかん",
-        "meaning": ""
+        "meaning": "thời gian / giờ"
       },
       {
         "word": "用事",
         "kana": "ようじ",
-        "meaning": ""
+        "meaning": "việc bận"
       },
       {
         "word": "約束",
         "kana": "やくそく",
-        "meaning": ""
+        "meaning": "cuộc hẹn / lời hứa"
       },
       {
         "word": "ご主人",
         "kana": "ごしゅじん",
-        "meaning": ""
+        "meaning": "chồng của người khác"
       },
       {
         "word": "夫/主人",
         "kana": "おっと/しゅじん",
-        "meaning": ""
+        "meaning": "chồng mình"
       },
       {
         "word": "奥さん",
         "kana": "おくさん",
-        "meaning": ""
+        "meaning": "vợ của người khác"
       },
       {
         "word": "妻/家内",
         "kana": "つま/かない",
-        "meaning": ""
+        "meaning": "vợ mình"
       },
       {
         "word": "子ども",
         "kana": "こども",
-        "meaning": ""
+        "meaning": "trẻ em / con"
       },
       {
         "word": "少し",
         "kana": "すこし",
-        "meaning": ""
+        "meaning": "một chút"
       },
       {
         "word": "全然",
         "kana": "ぜんぜん",
-        "meaning": ""
+        "meaning": "hoàn toàn không"
       },
       {
         "word": "早く、速く",
         "kana": "はやく",
-        "meaning": ""
+        "meaning": "nhanh / sớm"
       },
       {
         "word": "残念です[ね]",
         "kana": "ざんねんです[ね]",
-        "meaning": ""
+        "meaning": "tiếc quá"
       },
       {
         "word": "また今度お願いします",
         "kana": "またこんどおねがいします",
-        "meaning": ""
+        "meaning": "hẹn lần sau nhé"
       }
     ]
   },
@@ -1670,147 +1670,147 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "有ります",
         "kana": "あります",
-        "meaning": ""
+        "meaning": "có, dùng cho đồ vật"
       },
       {
         "word": "男の人",
         "kana": "おとこのひと",
-        "meaning": ""
+        "meaning": "người đàn ông"
       },
       {
         "word": "女の人",
         "kana": "おんなのひと",
-        "meaning": ""
+        "meaning": "người phụ nữ"
       },
       {
         "word": "男の子",
         "kana": "おとこのこ",
-        "meaning": ""
+        "meaning": "bé trai"
       },
       {
         "word": "女の子",
         "kana": "おんなのこ",
-        "meaning": ""
+        "meaning": "bé gái"
       },
       {
         "word": "犬",
         "kana": "いぬ",
-        "meaning": ""
+        "meaning": "chó"
       },
       {
         "word": "猫",
         "kana": "ねこ",
-        "meaning": ""
+        "meaning": "mèo"
       },
       {
         "word": "木",
         "kana": "き",
-        "meaning": ""
+        "meaning": "cây / gỗ"
       },
       {
         "word": "物",
         "kana": "もの",
-        "meaning": ""
+        "meaning": "đồ vật"
       },
       {
         "word": "電池",
         "kana": "でんち",
-        "meaning": ""
+        "meaning": "pin"
       },
       {
         "word": "箱",
         "kana": "はこ",
-        "meaning": ""
+        "meaning": "hộp"
       },
       {
         "word": "冷蔵庫",
         "kana": "れいぞうこ",
-        "meaning": ""
+        "meaning": "tủ lạnh"
       },
       {
         "word": "棚",
         "kana": "たな",
-        "meaning": ""
+        "meaning": "kệ"
       },
       {
         "word": "窓",
         "kana": "まど",
-        "meaning": ""
+        "meaning": "cửa sổ"
       },
       {
         "word": "公園",
         "kana": "こうえん",
-        "meaning": ""
+        "meaning": "công viên"
       },
       {
         "word": "喫茶店",
         "kana": "きっさてん",
-        "meaning": ""
+        "meaning": "quán cà phê"
       },
       {
         "word": "本屋",
         "kana": "ほんや",
-        "meaning": ""
+        "meaning": "hiệu sách"
       },
       {
         "word": "～屋",
         "kana": "～や",
-        "meaning": ""
+        "meaning": "tiệm / cửa hàng"
       },
       {
         "word": "乗り場",
         "kana": "のりば",
-        "meaning": ""
+        "meaning": "bến / nơi lên xe"
       },
       {
         "word": "県",
         "kana": "けん",
-        "meaning": ""
+        "meaning": "tỉnh"
       },
       {
         "word": "上",
         "kana": "うえ",
-        "meaning": ""
+        "meaning": "trên"
       },
       {
         "word": "下",
         "kana": "した",
-        "meaning": ""
+        "meaning": "dưới"
       },
       {
         "word": "前",
         "kana": "まえ",
-        "meaning": ""
+        "meaning": "trước"
       },
       {
         "word": "後ろ",
         "kana": "うしろ",
-        "meaning": ""
+        "meaning": "sau"
       },
       {
         "word": "右",
         "kana": "みぎ",
-        "meaning": ""
+        "meaning": "phải"
       },
       {
         "word": "左",
         "kana": "ひだり",
-        "meaning": ""
+        "meaning": "trái"
       },
       {
         "word": "中",
         "kana": "なか",
-        "meaning": ""
+        "meaning": "trong"
       },
       {
         "word": "外",
         "kana": "そと",
-        "meaning": ""
+        "meaning": "ngoài"
       },
       {
         "word": "間",
         "kana": "あいだ",
-        "meaning": ""
+        "meaning": "giữa / khoảng thời gian"
       }
     ]
   },
@@ -1821,217 +1821,217 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "掛かります",
         "kana": "かかります",
-        "meaning": ""
+        "meaning": "mất, tốn thời gian/tiền"
       },
       {
         "word": "休みます",
         "kana": "やすみます",
-        "meaning": ""
+        "meaning": "nghỉ"
       },
       {
         "word": "一つ",
         "kana": "ひとつ",
-        "meaning": ""
+        "meaning": "một cái"
       },
       {
         "word": "二つ",
         "kana": "ふたつ",
-        "meaning": ""
+        "meaning": "hai cái"
       },
       {
         "word": "三つ",
         "kana": "みっつ",
-        "meaning": ""
+        "meaning": "ba cái"
       },
       {
         "word": "四つ",
         "kana": "よっつ",
-        "meaning": ""
+        "meaning": "bốn cái"
       },
       {
         "word": "五つ",
         "kana": "いつつ",
-        "meaning": ""
+        "meaning": "năm cái"
       },
       {
         "word": "六つ",
         "kana": "むっつ",
-        "meaning": ""
+        "meaning": "sáu cái"
       },
       {
         "word": "七つ",
         "kana": "ななつ",
-        "meaning": ""
+        "meaning": "bảy cái"
       },
       {
         "word": "八つ",
         "kana": "やっつ",
-        "meaning": ""
+        "meaning": "tám cái"
       },
       {
         "word": "九つ",
         "kana": "ここのつ",
-        "meaning": ""
+        "meaning": "chín cái"
       },
       {
         "word": "十",
         "kana": "とお",
-        "meaning": ""
+        "meaning": "mười cái"
       },
       {
         "word": "幾つ",
         "kana": "いくつ",
-        "meaning": ""
+        "meaning": "mấy cái / bao nhiêu tuổi"
       },
       {
         "word": "一人",
         "kana": "ひとり",
-        "meaning": ""
+        "meaning": "một người"
       },
       {
         "word": "二人",
         "kana": "ふたり",
-        "meaning": ""
+        "meaning": "hai người"
       },
       {
         "word": "～人",
         "kana": "～にん",
-        "meaning": ""
+        "meaning": "người"
       },
       {
         "word": "台",
         "kana": "～だい",
-        "meaning": ""
+        "meaning": "máy / chiếc, đếm máy móc xe cộ"
       },
       {
         "word": "枚",
         "kana": "～まい",
-        "meaning": ""
+        "meaning": "tờ / chiếc mỏng"
       },
       {
         "word": "回",
         "kana": "～かい",
-        "meaning": ""
+        "meaning": "lần"
       },
       {
         "word": "切手",
         "kana": "きって",
-        "meaning": ""
+        "meaning": "tem thư"
       },
       {
         "word": "葉書",
         "kana": "はがき",
-        "meaning": ""
+        "meaning": "bưu thiếp"
       },
       {
         "word": "封筒",
         "kana": "ふうとう",
-        "meaning": ""
+        "meaning": "phong bì"
       },
       {
         "word": "速達",
         "kana": "そくたつ",
-        "meaning": ""
+        "meaning": "gửi nhanh"
       },
       {
         "word": "書留",
         "kana": "かきとめ",
-        "meaning": ""
+        "meaning": "thư bảo đảm"
       },
       {
         "word": "船便",
         "kana": "ふなびん",
-        "meaning": ""
+        "meaning": "gửi đường biển"
       },
       {
         "word": "両親",
         "kana": "りょうしん",
-        "meaning": ""
+        "meaning": "bố mẹ"
       },
       {
         "word": "兄弟",
         "kana": "きょうだい",
-        "meaning": ""
+        "meaning": "anh chị em"
       },
       {
         "word": "兄",
         "kana": "あに",
-        "meaning": ""
+        "meaning": "anh trai mình"
       },
       {
         "word": "お兄いさん",
         "kana": "おにいさん",
-        "meaning": ""
+        "meaning": "anh trai người khác"
       },
       {
         "word": "姉",
         "kana": "あね",
-        "meaning": ""
+        "meaning": "chị gái mình"
       },
       {
         "word": "お姉さん",
         "kana": "おねえさん",
-        "meaning": ""
+        "meaning": "chị gái người khác"
       },
       {
         "word": "弟",
         "kana": "おとうと",
-        "meaning": ""
+        "meaning": "em trai mình"
       },
       {
         "word": "弟さん",
         "kana": "おとうとさん",
-        "meaning": ""
+        "meaning": "em trai người khác"
       },
       {
         "word": "妹",
         "kana": "いもうと",
-        "meaning": ""
+        "meaning": "em gái mình"
       },
       {
         "word": "妹さん",
         "kana": "いもうとさん",
-        "meaning": ""
+        "meaning": "em gái người khác"
       },
       {
         "word": "外国",
         "kana": "がいこく",
-        "meaning": ""
+        "meaning": "nước ngoài"
       },
       {
         "word": "～時間",
         "kana": "～じかん",
-        "meaning": ""
+        "meaning": "thời gian / giờ"
       },
       {
         "word": "～週間",
         "kana": "～しゅうかん",
-        "meaning": ""
+        "meaning": "tuần"
       },
       {
         "word": "~ヶ月",
         "kana": "～かげつ",
-        "meaning": ""
+        "meaning": "tháng, khoảng thời gian"
       },
       {
         "word": "～年",
         "kana": "～ねん",
-        "meaning": ""
+        "meaning": "năm"
       },
       {
         "word": "全部で",
         "kana": "ぜんぶで",
-        "meaning": ""
+        "meaning": "tổng cộng"
       },
       {
         "word": "いい（お）天気ですね",
         "kana": "いい (お)てんきですね",
-        "meaning": ""
+        "meaning": "thời tiết đẹp nhỉ"
       },
       {
         "word": "お出かけますか",
         "kana": "おでかけですか",
-        "meaning": ""
+        "meaning": "bạn đi ra ngoài à?"
       }
     ]
   },
@@ -2042,167 +2042,167 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "疲れました",
         "kana": "つかれました",
-        "meaning": ""
+        "meaning": "đã mệt"
       },
       {
         "word": "秋",
         "kana": "あき",
-        "meaning": ""
+        "meaning": "mùa thu"
       },
       {
         "word": "雪",
         "kana": "ゆき",
-        "meaning": ""
+        "meaning": "tuyết"
       },
       {
         "word": "少ない [人が～]",
         "kana": "すくない [ひとが～]",
-        "meaning": ""
+        "meaning": "ít"
       },
       {
         "word": "天気",
         "kana": "てんき",
-        "meaning": ""
+        "meaning": "thời tiết"
       },
       {
         "word": "近い",
         "kana": "ちかい",
-        "meaning": ""
+        "meaning": "gần"
       },
       {
         "word": "冬",
         "kana": "ふゆ",
-        "meaning": ""
+        "meaning": "mùa đông"
       },
       {
         "word": "空港",
         "kana": "くうこう",
-        "meaning": ""
+        "meaning": "sân bay"
       },
       {
         "word": "お寿司",
         "kana": "「お」すし",
-        "meaning": ""
+        "meaning": "sushi"
       },
       {
         "word": "速い、早い",
         "kana": "はやい",
-        "meaning": ""
+        "meaning": "nhanh"
       },
       {
         "word": "遠い",
         "kana": "とおい",
-        "meaning": ""
+        "meaning": "xa"
       },
       {
         "word": "春",
         "kana": "はる",
-        "meaning": ""
+        "meaning": "mùa xuân"
       },
       {
         "word": "刺身",
         "kana": "さしみ",
-        "meaning": ""
+        "meaning": "sashimi"
       },
       {
         "word": "海",
         "kana": "うみ",
-        "meaning": ""
+        "meaning": "biển"
       },
       {
         "word": "温かい、暖かい",
         "kana": "あたたかい",
-        "meaning": ""
+        "meaning": "ấm, đồ vật"
       },
       {
         "word": "辛い",
         "kana": "からい",
-        "meaning": ""
+        "meaning": "cay"
       },
       {
         "word": "多い [人が～]",
         "kana": "おおい [ひとが～]",
-        "meaning": ""
+        "meaning": "nhiều"
       },
       {
         "word": "紅葉",
         "kana": "もみじ",
-        "meaning": ""
+        "meaning": "lá đỏ mùa thu"
       },
       {
         "word": "世界",
         "kana": "せかい",
-        "meaning": ""
+        "meaning": "thế giới"
       },
       {
         "word": "初めて",
         "kana": "はじめて",
-        "meaning": ""
+        "meaning": "lần đầu"
       },
       {
         "word": "雨",
         "kana": "あめ",
-        "meaning": ""
+        "meaning": "mưa"
       },
       {
         "word": "重い",
         "kana": "おもい",
-        "meaning": ""
+        "meaning": "nặng"
       },
       {
         "word": "夏",
         "kana": "なつ",
-        "meaning": ""
+        "meaning": "mùa hè"
       },
       {
         "word": "すき焼き",
         "kana": "すきやき",
-        "meaning": ""
+        "meaning": "sukiyaki"
       },
       {
         "word": "曇り",
         "kana": "くもり",
-        "meaning": ""
+        "meaning": "trời nhiều mây"
       },
       {
         "word": "甘い",
         "kana": "あまい",
-        "meaning": ""
+        "meaning": "ngọt"
       },
       {
         "word": "涼しい",
         "kana": "すずしい",
-        "meaning": ""
+        "meaning": "mát mẻ"
       },
       {
         "word": "軽い",
         "kana": "かるい",
-        "meaning": ""
+        "meaning": "nhẹ"
       },
       {
         "word": "季節",
         "kana": "きせつ",
-        "meaning": ""
+        "meaning": "mùa"
       },
       {
         "word": "(お) 祭り",
         "kana": "(お) まつり",
-        "meaning": ""
+        "meaning": "lễ hội"
       },
       {
         "word": "生け花",
         "kana": "いけばな",
-        "meaning": ""
+        "meaning": "nghệ thuật cắm hoa"
       },
       {
         "word": "簡単「な」",
         "kana": "かんたん「な」",
-        "meaning": ""
+        "meaning": "đơn giản"
       },
       {
         "word": "遅い",
         "kana": "おそい",
-        "meaning": ""
+        "meaning": "muộn / chậm"
       }
     ]
   },
@@ -2213,112 +2213,112 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "遊びます",
         "kana": "あそびます",
-        "meaning": ""
+        "meaning": "chơi"
       },
       {
         "word": "泳ぎます",
         "kana": "およぎます",
-        "meaning": ""
+        "meaning": "bơi"
       },
       {
         "word": "迎えます",
         "kana": "むかえます",
-        "meaning": ""
+        "meaning": "đón"
       },
       {
         "word": "疲れます",
         "kana": "つかれます",
-        "meaning": ""
+        "meaning": "mệt"
       },
       {
         "word": "結婚します",
         "kana": "けっこんします",
-        "meaning": ""
+        "meaning": "kết hôn"
       },
       {
         "word": "買い物します",
         "kana": "かいものします",
-        "meaning": ""
+        "meaning": "mua sắm"
       },
       {
         "word": "食事します",
         "kana": "しょくじします",
-        "meaning": ""
+        "meaning": "ăn uống / dùng bữa"
       },
       {
         "word": "散歩します [公園を～]",
         "kana": "さんぽします [こうえんを～]",
-        "meaning": ""
+        "meaning": "đi dạo"
       },
       {
         "word": "大変「な」",
         "kana": "たいへん「な」",
-        "meaning": ""
+        "meaning": "vất vả / nghiêm trọng"
       },
       {
         "word": "欲しい",
         "kana": "ほしい",
-        "meaning": ""
+        "meaning": "muốn có"
       },
       {
         "word": "寂しい",
         "kana": "さびしい",
-        "meaning": ""
+        "meaning": "buồn / cô đơn"
       },
       {
         "word": "広い",
         "kana": "ひろい",
-        "meaning": ""
+        "meaning": "rộng"
       },
       {
         "word": "狭い",
         "kana": "せまい",
-        "meaning": ""
+        "meaning": "hẹp"
       },
       {
         "word": "川",
         "kana": "かわ",
-        "meaning": ""
+        "meaning": "sông"
       },
       {
         "word": "美術",
         "kana": "びじゅつ",
-        "meaning": ""
+        "meaning": "mỹ thuật"
       },
       {
         "word": "釣り",
         "kana": "つり",
-        "meaning": ""
+        "meaning": "tiền thừa"
       },
       {
         "word": "週末",
         "kana": "しゅうまつ",
-        "meaning": ""
+        "meaning": "cuối tuần"
       },
       {
         "word": "何か",
         "kana": "なにか",
-        "meaning": ""
+        "meaning": "cái gì đó"
       },
       {
         "word": "ご注文は",
         "kana": "ごちゅうもんは",
-        "meaning": ""
+        "meaning": "quý khách gọi món gì?"
       },
       {
         "word": "牛どん",
         "kana": "ぎゅうどん",
-        "meaning": ""
+        "meaning": "cơm bò gyudon"
       },
       {
         "word": "少々お待ちください。",
         "kana": "しょうしょう おまちください",
-        "meaning": ""
+        "meaning": "xin chờ một chút"
       },
       {
         "word": "別々に",
         "kana": "べつべつに",
-        "meaning": ""
+        "meaning": "riêng ra / tách riêng"
       }
     ]
   },
@@ -2329,137 +2329,137 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "付けます",
         "kana": "つけます II",
-        "meaning": ""
+        "meaning": "bật / gắn"
       },
       {
         "word": "消します",
         "kana": "けしますＩ",
-        "meaning": ""
+        "meaning": "tắt / xóa"
       },
       {
         "word": "開けます",
         "kana": "あけます II",
-        "meaning": ""
+        "meaning": "mở"
       },
       {
         "word": "閉めます",
         "kana": "しめます II",
-        "meaning": ""
+        "meaning": "đóng"
       },
       {
         "word": "急ぎます",
         "kana": "いそぎます I",
-        "meaning": ""
+        "meaning": "vội"
       },
       {
         "word": "待ちます",
         "kana": "まちます I",
-        "meaning": ""
+        "meaning": "đợi"
       },
       {
         "word": "止めます",
         "kana": "とめます II",
-        "meaning": ""
+        "meaning": "dừng / đỗ"
       },
       {
         "word": "曲がります [右へ～]",
         "kana": "まがります I [みぎへ～]",
-        "meaning": ""
+        "meaning": "rẽ"
       },
       {
         "word": "持ちます",
         "kana": "もちます I",
-        "meaning": ""
+        "meaning": "cầm / mang"
       },
       {
         "word": "取ります",
         "kana": "とります I",
-        "meaning": ""
+        "meaning": "lấy / cầm / chụp"
       },
       {
         "word": "手伝います",
         "kana": "てつだいます I",
-        "meaning": ""
+        "meaning": "giúp đỡ"
       },
       {
         "word": "呼びます",
         "kana": "よびます I",
-        "meaning": ""
+        "meaning": "gọi"
       },
       {
         "word": "話します",
         "kana": "はなします I",
-        "meaning": ""
+        "meaning": "nói chuyện"
       },
       {
         "word": "見せます",
         "kana": "みせます II",
-        "meaning": ""
+        "meaning": "cho xem"
       },
       {
         "word": "教えます",
         "kana": "おしえます II",
-        "meaning": ""
+        "meaning": "dạy / chỉ cho"
       },
       {
         "word": "始めます",
         "kana": "はじめます II",
-        "meaning": ""
+        "meaning": "bắt đầu"
       },
       {
         "word": "降ります",
         "kana": "ふります I",
-        "meaning": ""
+        "meaning": "xuống xe / rơi"
       },
       {
         "word": "名前",
         "kana": "なまえ",
-        "meaning": ""
+        "meaning": "tên"
       },
       {
         "word": "住所",
         "kana": "じゅうしょ",
-        "meaning": ""
+        "meaning": "địa chỉ"
       },
       {
         "word": "地図",
         "kana": "ちず",
-        "meaning": ""
+        "meaning": "bản đồ"
       },
       {
         "word": "塩",
         "kana": "しお",
-        "meaning": ""
+        "meaning": "muối"
       },
       {
         "word": "砂糖",
         "kana": "さとう",
-        "meaning": ""
+        "meaning": "đường"
       },
       {
         "word": "読み方",
         "kana": "よみかた",
-        "meaning": ""
+        "meaning": "cách đọc"
       },
       {
         "word": "～方",
         "kana": "～かた",
-        "meaning": ""
+        "meaning": "cách"
       },
       {
         "word": "もう 少し",
         "kana": "もう すこし",
-        "meaning": ""
+        "meaning": "thêm một chút"
       },
       {
         "word": "お釣り",
         "kana": "おつり",
-        "meaning": ""
+        "meaning": "tiền thừa"
       },
       {
         "word": "これでお願いします",
         "kana": "これでおねがいします",
-        "meaning": ""
+        "meaning": "làm ơn lấy cái này / trả bằng cái này"
       }
     ]
   },
@@ -2470,117 +2470,117 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "立ちます",
         "kana": "たちます",
-        "meaning": ""
+        "meaning": "đứng"
       },
       {
         "word": "座ります",
         "kana": "すわります",
-        "meaning": ""
+        "meaning": "ngồi"
       },
       {
         "word": "使います",
         "kana": "つかいます",
-        "meaning": ""
+        "meaning": "dùng"
       },
       {
         "word": "置きます",
         "kana": "おきます",
-        "meaning": ""
+        "meaning": "đặt / để"
       },
       {
         "word": "作ります，造ります",
         "kana": "つくります",
-        "meaning": ""
+        "meaning": "làm / tạo"
       },
       {
         "word": "売ります",
         "kana": "うります",
-        "meaning": ""
+        "meaning": "bán"
       },
       {
         "word": "知ります",
         "kana": "しります",
-        "meaning": ""
+        "meaning": "biết"
       },
       {
         "word": "住みます",
         "kana": "すみます",
-        "meaning": ""
+        "meaning": "sống / cư trú"
       },
       {
         "word": "研究します",
         "kana": "けんきゅうします",
-        "meaning": ""
+        "meaning": "nghiên cứu"
       },
       {
         "word": "知って います",
         "kana": "しって います",
-        "meaning": ""
+        "meaning": "biết"
       },
       {
         "word": "住んで います [大阪に～]",
         "kana": "すんで います [おおさかに～]",
-        "meaning": ""
+        "meaning": "đang sống"
       },
       {
         "word": "資料",
         "kana": "しりょう",
-        "meaning": ""
+        "meaning": "tài liệu"
       },
       {
         "word": "時刻表",
         "kana": "じこくひょう",
-        "meaning": ""
+        "meaning": "bảng giờ tàu/xe"
       },
       {
         "word": "服",
         "kana": "ふく",
-        "meaning": ""
+        "meaning": "quần áo"
       },
       {
         "word": "製品",
         "kana": "せいひん",
-        "meaning": ""
+        "meaning": "sản phẩm"
       },
       {
         "word": "専門",
         "kana": "せんもん",
-        "meaning": ""
+        "meaning": "chuyên môn"
       },
       {
         "word": "歯医者",
         "kana": "はいしゃ",
-        "meaning": ""
+        "meaning": "nha sĩ"
       },
       {
         "word": "床屋",
         "kana": "とこや",
-        "meaning": ""
+        "meaning": "tiệm cắt tóc"
       },
       {
         "word": "独身",
         "kana": "どくしん",
-        "meaning": ""
+        "meaning": "độc thân"
       },
       {
         "word": "特に",
         "kana": "とくに",
-        "meaning": ""
+        "meaning": "đặc biệt là"
       },
       {
         "word": "思い出します",
         "kana": "おもいだします",
-        "meaning": ""
+        "meaning": "nhớ ra"
       },
       {
         "word": "ご家族",
         "kana": "ごかぞく",
-        "meaning": ""
+        "meaning": "gia đình của người khác"
       },
       {
         "word": "高校",
         "kana": "こうこう",
-        "meaning": ""
+        "meaning": "trường cấp ba"
       }
     ]
   },
@@ -2591,177 +2591,177 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "乗ります [電車に～]",
         "kana": "のります [でんしゃに～]",
-        "meaning": ""
+        "meaning": "lên / đi phương tiện"
       },
       {
         "word": "降ります [電車に～]",
         "kana": "おります [でんしゃに～]",
-        "meaning": ""
+        "meaning": "xuống xe / rơi"
       },
       {
         "word": "乗り換えます",
         "kana": "のりかえます",
-        "meaning": ""
+        "meaning": "chuyển tàu/xe"
       },
       {
         "word": "浴びます",
         "kana": "あびます [シャワーを～]",
-        "meaning": ""
+        "meaning": "tắm / hứng"
       },
       {
         "word": "入れます",
         "kana": "いれます",
-        "meaning": ""
+        "meaning": "cho vào"
       },
       {
         "word": "出します",
         "kana": "だします",
-        "meaning": ""
+        "meaning": "đưa ra / nộp"
       },
       {
         "word": "入ります [大学に～]",
         "kana": "はいります [だいがくに～]",
-        "meaning": ""
+        "meaning": "vào"
       },
       {
         "word": "出ます [大学を～]",
         "kana": "でます [だいがくを～]",
-        "meaning": ""
+        "meaning": "ra / xuất hiện"
       },
       {
         "word": "やめます [会社を～]",
         "kana": "やめます [かいしゃを～]",
-        "meaning": ""
+        "meaning": "nghỉ / bỏ"
       },
       {
         "word": "押します",
         "kana": "おします",
-        "meaning": ""
+        "meaning": "ấn / đẩy"
       },
       {
         "word": "若い",
         "kana": "わかい",
-        "meaning": ""
+        "meaning": "trẻ"
       },
       {
         "word": "長い",
         "kana": "ながい",
-        "meaning": ""
+        "meaning": "dài"
       },
       {
         "word": "短い",
         "kana": "みじかい",
-        "meaning": ""
+        "meaning": "ngắn"
       },
       {
         "word": "明るい",
         "kana": "あかるい",
-        "meaning": ""
+        "meaning": "sáng"
       },
       {
         "word": "暗い",
         "kana": "くらい",
-        "meaning": ""
+        "meaning": "tối"
       },
       {
         "word": "背が 高い",
         "kana": "せが たかい",
-        "meaning": ""
+        "meaning": "cao người"
       },
       {
         "word": "頭が いい",
         "kana": "あたまが いい",
-        "meaning": ""
+        "meaning": "thông minh"
       },
       {
         "word": "体",
         "kana": "からだ",
-        "meaning": ""
+        "meaning": "cơ thể"
       },
       {
         "word": "頭",
         "kana": "あたま",
-        "meaning": ""
+        "meaning": "đầu"
       },
       {
         "word": "髪",
         "kana": "かみ",
-        "meaning": ""
+        "meaning": "tóc"
       },
       {
         "word": "顔",
         "kana": "かお",
-        "meaning": ""
+        "meaning": "mặt"
       },
       {
         "word": "目",
         "kana": "め",
-        "meaning": ""
+        "meaning": "thứ tự số..."
       },
       {
         "word": "耳",
         "kana": "みみ",
-        "meaning": ""
+        "meaning": "tai"
       },
       {
         "word": "歯",
         "kana": "は",
-        "meaning": ""
+        "meaning": "răng"
       },
       {
         "word": "お腹",
         "kana": "おなか",
-        "meaning": ""
+        "meaning": "bụng"
       },
       {
         "word": "足",
         "kana": "あし",
-        "meaning": ""
+        "meaning": "chân"
       },
       {
         "word": "緑",
         "kana": "みどり",
-        "meaning": ""
+        "meaning": "màu xanh lá"
       },
       {
         "word": "[お]寺",
         "kana": "[お]てら",
-        "meaning": ""
+        "meaning": "chùa"
       },
       {
         "word": "神社",
         "kana": "じんじゃ",
-        "meaning": ""
+        "meaning": "đền Thần đạo"
       },
       {
         "word": "留学生",
         "kana": "りゅうがくせい",
-        "meaning": ""
+        "meaning": "du học sinh"
       },
       {
         "word": "一番",
         "kana": "一ばん",
-        "meaning": ""
+        "meaning": "số một / nhất"
       },
       {
         "word": "暗証番号",
         "kana": "あんしょうばんごう",
-        "meaning": ""
+        "meaning": "mã PIN"
       },
       {
         "word": "次に",
         "kana": "つぎ に",
-        "meaning": ""
+        "meaning": "tiếp theo"
       },
       {
         "word": "確認",
         "kana": "かくにん",
-        "meaning": ""
+        "meaning": "xác nhận / kiểm tra lại"
       },
       {
         "word": "金額",
         "kana": "きんがく",
-        "meaning": ""
+        "meaning": "số tiền"
       }
     ]
   },
@@ -2772,167 +2772,167 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "お風呂",
         "kana": "[お]ふろ",
-        "meaning": ""
+        "meaning": "bồn tắm / phòng tắm"
       },
       {
         "word": "「薬を」飲みます",
         "kana": "[くすりを] のみます",
-        "meaning": ""
+        "meaning": "uống thuốc"
       },
       {
         "word": "上着",
         "kana": "うわぎ",
-        "meaning": ""
+        "meaning": "áo khoác ngoài"
       },
       {
         "word": "心配します",
         "kana": "しんぱいします",
-        "meaning": ""
+        "meaning": "lo lắng"
       },
       {
         "word": "忘れます",
         "kana": "わすれます",
-        "meaning": ""
+        "meaning": "quên"
       },
       {
         "word": "答え",
         "kana": "こたえ",
-        "meaning": ""
+        "meaning": "câu trả lời"
       },
       {
         "word": "問題",
         "kana": "もんだい",
-        "meaning": ""
+        "meaning": "vấn đề / câu hỏi"
       },
       {
         "word": "出します",
         "kana": "[レポートを] だします",
-        "meaning": ""
+        "meaning": "đưa ra / nộp"
       },
       {
         "word": "先生",
         "kana": "せんせい",
-        "meaning": ""
+        "meaning": "giáo viên / thầy cô"
       },
       {
         "word": "持って来ます",
         "kana": "もってきます",
-        "meaning": ""
+        "meaning": "mang đến"
       },
       {
         "word": "２、３日",
         "kana": "２、３にち",
-        "meaning": ""
+        "meaning": "ngày mùng 3 / ba ngày"
       },
       {
         "word": "お大事に",
         "kana": "おだいじに",
-        "meaning": ""
+        "meaning": "giữ gìn sức khỏe / mau khỏe"
       },
       {
         "word": "払います",
         "kana": "はらいます",
-        "meaning": ""
+        "meaning": "trả tiền"
       },
       {
         "word": "病気",
         "kana": "びょうき",
-        "meaning": ""
+        "meaning": "bệnh"
       },
       {
         "word": "禁煙",
         "kana": "きんえん",
-        "meaning": ""
+        "meaning": "cấm hút thuốc"
       },
       {
         "word": "下着",
         "kana": "したぎ",
-        "meaning": ""
+        "meaning": "đồ lót"
       },
       {
         "word": "痛いです。",
         "kana": "[～が] いたいです",
-        "meaning": ""
+        "meaning": "đau"
       },
       {
         "word": "残業します",
         "kana": "ざんぎょうします",
-        "meaning": ""
+        "meaning": "làm thêm giờ"
       },
       {
         "word": "危ない",
         "kana": "あぶない",
-        "meaning": ""
+        "meaning": "nguy hiểm"
       },
       {
         "word": "出張します",
         "kana": "しゅっちょうします",
-        "meaning": ""
+        "meaning": "đi công tác"
       },
       {
         "word": "脱ぎます",
         "kana": "ぬぎます",
-        "meaning": ""
+        "meaning": "cởi"
       },
       {
         "word": "風邪",
         "kana": "かぜ",
-        "meaning": ""
+        "meaning": "cảm lạnh"
       },
       {
         "word": "大丈夫「な」",
         "kana": "だいじょうぶ[な]",
-        "meaning": ""
+        "meaning": "ổn / không sao"
       },
       {
         "word": "「おふろに」入ります",
         "kana": "[おふろに] はいります",
-        "meaning": ""
+        "meaning": "vào"
       },
       {
         "word": "覚えます",
         "kana": "おぼえます",
-        "meaning": ""
+        "meaning": "nhớ / học thuộc"
       },
       {
         "word": "熱",
         "kana": "ねつ",
-        "meaning": ""
+        "meaning": "sốt / nhiệt"
       },
       {
         "word": "出かけます",
         "kana": "でかけます",
-        "meaning": ""
+        "meaning": "ra ngoài"
       },
       {
         "word": "返します",
         "kana": "かえします",
-        "meaning": ""
+        "meaning": "trả lại"
       },
       {
         "word": "健康保険証",
         "kana": "[けんこう] ほけんしょう",
-        "meaning": ""
+        "meaning": "thẻ bảo hiểm y tế"
       },
       {
         "word": "大切「な」",
         "kana": "たいせつ[な]",
-        "meaning": ""
+        "meaning": "quan trọng"
       },
       {
         "word": "持って行きます",
         "kana": "もっていきます",
-        "meaning": ""
+        "meaning": "mang đi"
       },
       {
         "word": "喉",
         "kana": "のど",
-        "meaning": ""
+        "meaning": "cổ họng"
       },
       {
         "word": "薬",
         "kana": "くすり",
-        "meaning": ""
+        "meaning": "thuốc"
       }
     ]
   },
@@ -2943,117 +2943,117 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "出来ます",
         "kana": "できます",
-        "meaning": ""
+        "meaning": "có thể / hoàn thành"
       },
       {
         "word": "洗います",
         "kana": "あらいます",
-        "meaning": ""
+        "meaning": "rửa / giặt"
       },
       {
         "word": "弾きます",
         "kana": "ひきます",
-        "meaning": ""
+        "meaning": "chơi nhạc cụ"
       },
       {
         "word": "歌います",
         "kana": "うたいます",
-        "meaning": ""
+        "meaning": "hát"
       },
       {
         "word": "集めます",
         "kana": "あつめます",
-        "meaning": ""
+        "meaning": "sưu tập / gom"
       },
       {
         "word": "捨てます",
         "kana": "すてます",
-        "meaning": ""
+        "meaning": "vứt"
       },
       {
         "word": "換えます",
         "kana": "かえます",
-        "meaning": ""
+        "meaning": "đổi / thay"
       },
       {
         "word": "運転します",
         "kana": "うんてんします",
-        "meaning": ""
+        "meaning": "lái xe"
       },
       {
         "word": "予約します",
         "kana": "よやくします",
-        "meaning": ""
+        "meaning": "đặt trước"
       },
       {
         "word": "見学します",
         "kana": "けんかくします",
-        "meaning": ""
+        "meaning": "tham quan học tập"
       },
       {
         "word": "国際",
         "kana": "こくさい～",
-        "meaning": ""
+        "meaning": "quốc tế"
       },
       {
         "word": "現金",
         "kana": "げんきん",
-        "meaning": ""
+        "meaning": "tiền mặt"
       },
       {
         "word": "趣味",
         "kana": "しゅみ",
-        "meaning": ""
+        "meaning": "sở thích"
       },
       {
         "word": "日記",
         "kana": "にっき",
-        "meaning": ""
+        "meaning": "nhật ký"
       },
       {
         "word": "祈り",
         "kana": "いのり",
-        "meaning": ""
+        "meaning": "lời cầu nguyện"
       },
       {
         "word": "課長",
         "kana": "かちょう",
-        "meaning": ""
+        "meaning": "trưởng phòng"
       },
       {
         "word": "部長",
         "kana": "ぶちょう",
-        "meaning": ""
+        "meaning": "trưởng bộ phận"
       },
       {
         "word": "社長",
         "kana": "しゃちょう",
-        "meaning": ""
+        "meaning": "giám đốc công ty"
       },
       {
         "word": "動物",
         "kana": "どうぶつ",
-        "meaning": ""
+        "meaning": "động vật"
       },
       {
         "word": "馬",
         "kana": "うま",
-        "meaning": ""
+        "meaning": "ngựa"
       },
       {
         "word": "牧場",
         "kana": "ぼくじょう",
-        "meaning": ""
+        "meaning": "nông trại / trang trại chăn nuôi"
       },
       {
         "word": "本当ですか",
         "kana": "ほんとうですか",
-        "meaning": ""
+        "meaning": "thật vậy à?"
       },
       {
         "word": "是非",
         "kana": "ぜひ",
-        "meaning": ""
+        "meaning": "nhất định"
       }
     ]
   },
@@ -3064,102 +3064,102 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "登ります",
         "kana": "のぼります",
-        "meaning": ""
+        "meaning": "leo / trèo"
       },
       {
         "word": "練習します",
         "kana": "れんしゅうします",
-        "meaning": ""
+        "meaning": "luyện tập"
       },
       {
         "word": "掃除します",
         "kana": "そうじします",
-        "meaning": ""
+        "meaning": "dọn dẹp"
       },
       {
         "word": "洗濯します",
         "kana": "せんたくします",
-        "meaning": ""
+        "meaning": "giặt giũ"
       },
       {
         "word": "眠い",
         "kana": "ねむい",
-        "meaning": ""
+        "meaning": "buồn ngủ"
       },
       {
         "word": "強い",
         "kana": "つよい",
-        "meaning": ""
+        "meaning": "mạnh"
       },
       {
         "word": "弱い",
         "kana": "よわい",
-        "meaning": ""
+        "meaning": "yếu"
       },
       {
         "word": "調子",
         "kana": "ちょうし",
-        "meaning": ""
+        "meaning": "tình trạng / phong độ"
       },
       {
         "word": "調子が悪い",
         "kana": "ちょうしがわるい",
-        "meaning": ""
+        "meaning": "tình trạng không tốt"
       },
       {
         "word": "調子がいい",
         "kana": "ちょうしがいい",
-        "meaning": ""
+        "meaning": "tình trạng tốt"
       },
       {
         "word": "お茶",
         "kana": "おちゃ",
-        "meaning": ""
+        "meaning": "trà"
       },
       {
         "word": "相撲",
         "kana": "すもう",
-        "meaning": ""
+        "meaning": "sumo"
       },
       {
         "word": "日",
         "kana": "ひ",
-        "meaning": ""
+        "meaning": "ngày / mặt trời"
       },
       {
         "word": "一度",
         "kana": "いちど",
-        "meaning": ""
+        "meaning": "một lần"
       },
       {
         "word": "一度も",
         "kana": "いちども",
-        "meaning": ""
+        "meaning": "chưa từng lần nào"
       },
       {
         "word": "乾杯",
         "kana": "かんぱい",
-        "meaning": ""
+        "meaning": "cạn ly"
       },
       {
         "word": "実は",
         "kana": "じつは",
-        "meaning": ""
+        "meaning": "thật ra là"
       },
       {
         "word": "何回も",
         "kana": "なんかいも",
-        "meaning": ""
+        "meaning": "nhiều lần"
       },
       {
         "word": "無理「な」",
         "kana": "むり「な」",
-        "meaning": ""
+        "meaning": "không thể / quá sức"
       },
       {
         "word": "体にいい",
         "kana": "からだにいい",
-        "meaning": ""
+        "meaning": "tốt cho sức khỏe"
       }
     ]
   },
@@ -3170,87 +3170,87 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "要ります",
         "kana": "[ビザが～」いります",
-        "meaning": ""
+        "meaning": "cần"
       },
       {
         "word": "調べます",
         "kana": "しらべます",
-        "meaning": ""
+        "meaning": "tra cứu / kiểm tra"
       },
       {
         "word": "直します",
         "kana": "なおします",
-        "meaning": ""
+        "meaning": "sửa"
       },
       {
         "word": "修理します",
         "kana": "しゅうりします",
-        "meaning": ""
+        "meaning": "sửa chữa"
       },
       {
         "word": "電話します",
         "kana": "でんわします",
-        "meaning": ""
+        "meaning": "gọi điện"
       },
       {
         "word": "僕",
         "kana": "ぼく",
-        "meaning": ""
+        "meaning": "tôi, nam dùng thân mật"
       },
       {
         "word": "君",
         "kana": "きみ",
-        "meaning": ""
+        "meaning": "bạn / em, cách gọi thân mật"
       },
       {
         "word": "～君",
         "kana": "～くん",
-        "meaning": ""
+        "meaning": "bạn / em, cách gọi thân mật"
       },
       {
         "word": "言葉",
         "kana": "ことば",
-        "meaning": ""
+        "meaning": "từ ngữ / lời nói"
       },
       {
         "word": "物価",
         "kana": "ぶっか",
-        "meaning": ""
+        "meaning": "giá cả"
       },
       {
         "word": "着物",
         "kana": "きもの",
-        "meaning": ""
+        "meaning": "kimono"
       },
       {
         "word": "始め",
         "kana": "はじめ",
-        "meaning": ""
+        "meaning": "bắt đầu"
       },
       {
         "word": "終わり",
         "kana": "おわり",
-        "meaning": ""
+        "meaning": "kết thúc"
       },
       {
         "word": "この間",
         "kana": "このあいだ",
-        "meaning": ""
+        "meaning": "hôm nọ / vừa rồi"
       },
       {
         "word": "国へ帰るの",
         "kana": "くにへかえるの",
-        "meaning": ""
+        "meaning": "về nước à?"
       },
       {
         "word": "海",
         "kana": "どうするの",
-        "meaning": ""
+        "meaning": "biển"
       },
       {
         "word": "色々",
         "kana": "いろいろ",
-        "meaning": ""
+        "meaning": "nhiều loại / nhiều thứ"
       }
     ]
   },
@@ -3261,97 +3261,97 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "思います",
         "kana": "おもいます",
-        "meaning": ""
+        "meaning": "nghĩ"
       },
       {
         "word": "言います",
         "kana": "いいます",
-        "meaning": ""
+        "meaning": "nói"
       },
       {
         "word": "足ります",
         "kana": "たります",
-        "meaning": ""
+        "meaning": "đủ"
       },
       {
         "word": "勝ちます",
         "kana": "かちます",
-        "meaning": ""
+        "meaning": "thắng"
       },
       {
         "word": "負けます",
         "kana": "まけます",
-        "meaning": ""
+        "meaning": "thua"
       },
       {
         "word": "役に立ちます",
         "kana": "やくにたちます",
-        "meaning": ""
+        "meaning": "có ích"
       },
       {
         "word": "不便",
         "kana": "ふべん",
-        "meaning": ""
+        "meaning": "bất tiện"
       },
       {
         "word": "同じ",
         "kana": "おなじ",
-        "meaning": ""
+        "meaning": "giống nhau"
       },
       {
         "word": "首相",
         "kana": "しゅしょう",
-        "meaning": ""
+        "meaning": "thủ tướng"
       },
       {
         "word": "大統領",
         "kana": "だいとうりょう",
-        "meaning": ""
+        "meaning": "tổng thống"
       },
       {
         "word": "政治",
         "kana": "せいじ",
-        "meaning": ""
+        "meaning": "chính trị"
       },
       {
         "word": "試合",
         "kana": "しあい",
-        "meaning": ""
+        "meaning": "trận đấu"
       },
       {
         "word": "意見",
         "kana": "いけん",
-        "meaning": ""
+        "meaning": "ý kiến"
       },
       {
         "word": "話",
         "kana": "はなし",
-        "meaning": ""
+        "meaning": "câu chuyện"
       },
       {
         "word": "交通",
         "kana": "こうつう",
-        "meaning": ""
+        "meaning": "giao thông"
       },
       {
         "word": "最近",
         "kana": "さいきん",
-        "meaning": ""
+        "meaning": "gần đây"
       },
       {
         "word": "本当に",
         "kana": "ほんとうに",
-        "meaning": ""
+        "meaning": "thật sự"
       },
       {
         "word": "～でも飲みませんか",
         "kana": "～でものみませんか",
-        "meaning": ""
+        "meaning": "uống gì đó nhé?"
       },
       {
         "word": "見ないと。。。",
         "kana": "みないと。。。",
-        "meaning": ""
+        "meaning": "phải xem thôi"
       }
     ]
   },
@@ -3362,57 +3362,57 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "着ます",
         "kana": "きます「シャツを～」",
-        "meaning": ""
+        "meaning": "mặc, áo/quần phần thân trên"
       },
       {
         "word": "生まれます",
         "kana": "うまれます",
-        "meaning": ""
+        "meaning": "được sinh ra"
       },
       {
         "word": "帽子",
         "kana": "ぼうし",
-        "meaning": ""
+        "meaning": "mũ"
       },
       {
         "word": "眼鏡",
         "kana": "めがね",
-        "meaning": ""
+        "meaning": "kính mắt"
       },
       {
         "word": "家賃",
         "kana": "やちん",
-        "meaning": ""
+        "meaning": "tiền thuê nhà"
       },
       {
         "word": "和室",
         "kana": "わしつ",
-        "meaning": ""
+        "meaning": "phòng kiểu Nhật"
       },
       {
         "word": "押し入れ",
         "kana": "おしいれ",
-        "meaning": ""
+        "meaning": "tủ âm tường kiểu Nhật"
       },
       {
         "word": "布団",
         "kana": "ふとん",
-        "meaning": ""
+        "meaning": "đệm futon"
       },
       {
         "word": "万里の長城",
         "kana": "ばんりのちょうじょう",
-        "meaning": ""
+        "meaning": "Vạn Lý Trường Thành"
       },
       {
         "word": "余暇開発センター",
         "kana": "よかかいはつセンター",
-        "meaning": ""
+        "meaning": "Trung tâm phát triển giải trí"
       },
       {
         "word": "レジャー白書",
         "kana": "レジャーはくしょ",
-        "meaning": ""
+        "meaning": "sách trắng về giải trí"
       }
     ]
   },
@@ -3423,132 +3423,132 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "聞きます",
         "kana": "ききます「先生に」",
-        "meaning": ""
+        "meaning": "nghe / hỏi"
       },
       {
         "word": "道",
         "kana": "みち",
-        "meaning": ""
+        "meaning": "đường"
       },
       {
         "word": "交差点",
         "kana": "こうさてん",
-        "meaning": ""
+        "meaning": "ngã tư"
       },
       {
         "word": "信号",
         "kana": "しんごう",
-        "meaning": ""
+        "meaning": "đèn tín hiệu"
       },
       {
         "word": "引越しします",
         "kana": "ひっこしします",
-        "meaning": ""
+        "meaning": "chuyển nhà"
       },
       {
         "word": "回します",
         "kana": "まわします",
-        "meaning": ""
+        "meaning": "vặn / xoay"
       },
       {
         "word": "引きます",
         "kana": "ひきます",
-        "meaning": ""
+        "meaning": "kéo"
       },
       {
         "word": "変えます",
         "kana": "かえます",
-        "meaning": ""
+        "meaning": "thay đổi"
       },
       {
         "word": "触ります",
         "kana": "さわります",
-        "meaning": ""
+        "meaning": "chạm"
       },
       {
         "word": "出ます",
         "kana": "でます",
-        "meaning": ""
+        "meaning": "ra / xuất hiện"
       },
       {
         "word": "動きます。",
         "kana": "うごきます",
-        "meaning": ""
+        "meaning": "chuyển động"
       },
       {
         "word": "歩きます",
         "kana": "あるきます",
-        "meaning": ""
+        "meaning": "đi bộ"
       },
       {
         "word": "渡ります",
         "kana": "わたります",
-        "meaning": ""
+        "meaning": "băng qua"
       },
       {
         "word": "気を付けます",
         "kana": "きをつけます",
-        "meaning": ""
+        "meaning": "chú ý / cẩn thận"
       },
       {
         "word": "電気屋",
         "kana": "でんきや",
-        "meaning": ""
+        "meaning": "cửa hàng điện máy"
       },
       {
         "word": "故障",
         "kana": "こしょう",
-        "meaning": ""
+        "meaning": "hỏng hóc"
       },
       {
         "word": "ー屋",
         "kana": "―や",
-        "meaning": ""
+        "meaning": "tiệm / cửa hàng"
       },
       {
         "word": "音",
         "kana": "おと",
-        "meaning": ""
+        "meaning": "âm thanh"
       },
       {
         "word": "機械",
         "kana": "きかい",
-        "meaning": ""
+        "meaning": "máy móc"
       },
       {
         "word": "角",
         "kana": "かど",
-        "meaning": ""
+        "meaning": "góc"
       },
       {
         "word": "橋",
         "kana": "はし",
-        "meaning": ""
+        "meaning": "cầu"
       },
       {
         "word": "駐車場",
         "kana": "ちゅうしゃじょう",
-        "meaning": ""
+        "meaning": "bãi đỗ xe"
       },
       {
         "word": "お正月",
         "kana": "おしょうがつ",
-        "meaning": ""
+        "meaning": "Tết / năm mới"
       },
       {
         "word": "ー目",
         "kana": "ーめ",
-        "meaning": ""
+        "meaning": "thứ tự số..."
       },
       {
         "word": "建物",
         "kana": "たてもの",
-        "meaning": ""
+        "meaning": "tòa nhà"
       },
       {
         "word": "外国人登録証",
         "kana": "がいこくじんとうろくしょう",
-        "meaning": ""
+        "meaning": "thẻ đăng ký người nước ngoài"
       }
     ]
   },
@@ -3559,77 +3559,77 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "連れて行きます",
         "kana": "つれていきます",
-        "meaning": ""
+        "meaning": "dẫn đi"
       },
       {
         "word": "連れて来ます",
         "kana": "つれてきます",
-        "meaning": ""
+        "meaning": "dẫn đến"
       },
       {
         "word": "送ります",
         "kana": "おくります",
-        "meaning": ""
+        "meaning": "gửi / tiễn"
       },
       {
         "word": "紹介します",
         "kana": "しょうかいします",
-        "meaning": ""
+        "meaning": "giới thiệu"
       },
       {
         "word": "案内します",
         "kana": "あんないします",
-        "meaning": ""
+        "meaning": "hướng dẫn / dẫn đường"
       },
       {
         "word": "説明します",
         "kana": "せつめいします",
-        "meaning": ""
+        "meaning": "giải thích"
       },
       {
         "word": "入れます",
         "kana": "いれます",
-        "meaning": ""
+        "meaning": "cho vào"
       },
       {
         "word": "準備",
         "kana": "じゅんび",
-        "meaning": ""
+        "meaning": "chuẩn bị"
       },
       {
         "word": "意味",
         "kana": "いみ",
-        "meaning": ""
+        "meaning": "ý nghĩa"
       },
       {
         "word": "お菓子",
         "kana": "おかし",
-        "meaning": ""
+        "meaning": "bánh kẹo"
       },
       {
         "word": "全部",
         "kana": "ぜんぶ",
-        "meaning": ""
+        "meaning": "toàn bộ"
       },
       {
         "word": "自分で",
         "kana": "じぶんで",
-        "meaning": ""
+        "meaning": "tự mình"
       },
       {
         "word": "他に",
         "kana": "ほかに",
-        "meaning": ""
+        "meaning": "ngoài ra"
       },
       {
         "word": "お弁当",
         "kana": "おべんとう",
-        "meaning": ""
+        "meaning": "cơm hộp"
       },
       {
         "word": "母の日",
         "kana": "ははのひ",
-        "meaning": ""
+        "meaning": "Ngày của Mẹ"
       }
     ]
   },
@@ -3640,67 +3640,67 @@ window.MINNA_LESSONS_N5 = [
       {
         "word": "考えます",
         "kana": "かんがえます",
-        "meaning": ""
+        "meaning": "suy nghĩ"
       },
       {
         "word": "着きます",
         "kana": "つきます（駅に～）",
-        "meaning": ""
+        "meaning": "đến nơi"
       },
       {
         "word": "留学します",
         "kana": "りゅうがくします",
-        "meaning": ""
+        "meaning": "du học"
       },
       {
         "word": "取ります",
         "kana": "とります（年を～）",
-        "meaning": ""
+        "meaning": "lấy / cầm / chụp"
       },
       {
         "word": "田舎",
         "kana": "いなか",
-        "meaning": ""
+        "meaning": "quê / nông thôn"
       },
       {
         "word": "大使館",
         "kana": "たいしかん",
-        "meaning": ""
+        "meaning": "đại sứ quán"
       },
       {
         "word": "億",
         "kana": "おく",
-        "meaning": ""
+        "meaning": "trăm triệu"
       },
       {
         "word": "転勤",
         "kana": "てんきん",
-        "meaning": ""
+        "meaning": "chuyển công tác"
       },
       {
         "word": "事",
         "kana": "こと",
-        "meaning": ""
+        "meaning": "việc / chuyện"
       },
       {
         "word": "一杯飲みます",
         "kana": "いっぱいのみましょう",
-        "meaning": ""
+        "meaning": "uống một ly"
       },
       {
         "word": "どうぞ元気で",
         "kana": "どうぞおげんきで",
-        "meaning": ""
+        "meaning": "giữ gìn sức khỏe nhé"
       },
       {
         "word": "（いろいろ）お世話になりました",
         "kana": "（いろいろ）おせわになりました",
-        "meaning": ""
+        "meaning": "cảm ơn đã giúp đỡ tôi"
       },
       {
         "word": "頑張ります",
         "kana": "がんばります",
-        "meaning": ""
+        "meaning": "cố gắng"
       }
     ]
   }
