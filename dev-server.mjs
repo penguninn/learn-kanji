@@ -18,17 +18,13 @@ const mime = {
 
 const server = createServer(async (req, res) => {
   try {
-    if (req.method === 'POST' && req.url === '/api/meaning-edits') {
+    if (req.method === 'POST' && req.url === '/api/sync-data') {
       const body = await readBody(req);
-      const edits = JSON.parse(body || '{}');
-      validateEdits(edits);
-
-      const updated = await persistEditsToLessonFiles(edits);
-      const fallbackContent = `window.USER_MEANING_EDITS = ${JSON.stringify(edits, null, 2)};\n`;
-      await writeFile(join(root, 'data/user-meaning-edits.js'), fallbackContent, 'utf8');
-
+      const payload = JSON.parse(body || '{}');
+      validateSyncPayload(payload);
+      const updated = await syncVocabToLessonFiles(payload.vocab);
       res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-      res.end(JSON.stringify({ ok: true, count: Object.keys(edits).length, updated }));
+      res.end(JSON.stringify({ ok: true, updated }));
       return;
     }
 
@@ -59,10 +55,19 @@ const server = createServer(async (req, res) => {
 
 server.listen(port, () => {
   console.log(`Kanji study dev server: http://localhost:${port}`);
-  console.log('Edit nghĩa trên UI sẽ cập nhật data/quizlet-minna-bai-XX-lines.js');
+  console.log('Nút Đồng bộ data sẽ ghi cứng nghĩa vào data/quizlet-minna-bai-XX-lines.js');
 });
 
-async function persistEditsToLessonFiles(edits) {
+async function syncVocabToLessonFiles(vocab) {
+  const byKey = new Map();
+  for (const item of vocab) {
+    const lessons = Array.isArray(item.lessons) ? item.lessons : [];
+    for (const lesson of lessons) {
+      const key = `${lesson}::${item.word}::${item.kana}`;
+      byKey.set(key, sanitizeMeaning(item.meaning));
+    }
+  }
+
   let updated = 0;
   for (let lesson = 1; lesson <= 25; lesson++) {
     const file = join(root, `data/quizlet-minna-bai-${String(lesson).padStart(2, '0')}-lines.js`);
@@ -71,21 +76,26 @@ async function persistEditsToLessonFiles(edits) {
     const original = await readFile(file, 'utf8');
     const next = original.replace(/`([\s\S]*?)`\);/m, (_, raw) => {
       const lines = raw.split('\n').map(line => {
+        const indent = line.match(/^\s*/)?.[0] || '';
         const trimmed = line.trim();
         if (!trimmed) return line;
         const [word = '', kana = '', oldMeaning = ''] = trimmed.split('|').map(x => x.trim());
         if (!word || !kana) return line;
 
-        const key = `${encodeURIComponent(word)}|${encodeURIComponent(kana)}`;
-        if (!Object.prototype.hasOwnProperty.call(edits, key)) return line;
-        updated++;
-        return `${word}|${kana}|${sanitizeMeaning(edits[key])}`;
+        const key = `${lesson}::${word}::${kana}`;
+        const meaning = byKey.get(key) || oldMeaning || '';
+        if (!meaning) return line;
+        const nextLine = `${indent}${word}|${kana}|${meaning}`;
+        if (nextLine !== line) updated++;
+        return nextLine;
       });
       return '`' + lines.join('\n') + '`);';
     });
 
     if (next !== original) await writeFile(file, next, 'utf8');
   }
+
+  await writeFile(join(root, 'data/user-meaning-edits.js'), 'window.USER_MEANING_EDITS = {};\n', 'utf8');
   return updated;
 }
 
@@ -102,7 +112,7 @@ function readBody(req) {
     req.setEncoding('utf8');
     req.on('data', chunk => {
       body += chunk;
-      if (body.length > 1024 * 1024) {
+      if (body.length > 1024 * 1024 * 5) {
         reject(new Error('Request body too large'));
         req.destroy();
       }
@@ -112,16 +122,11 @@ function readBody(req) {
   });
 }
 
-function validateEdits(edits) {
-  if (!edits || typeof edits !== 'object' || Array.isArray(edits)) {
-    throw new Error('Invalid edits payload');
-  }
-  for (const [key, value] of Object.entries(edits)) {
-    if (typeof key !== 'string' || typeof value !== 'string') {
-      throw new Error('Invalid edit entry');
-    }
-    if (value.length > 1000) {
-      throw new Error('Meaning is too long');
+function validateSyncPayload(payload) {
+  if (!payload || !Array.isArray(payload.vocab)) throw new Error('Invalid sync payload');
+  for (const item of payload.vocab) {
+    if (typeof item.word !== 'string' || typeof item.kana !== 'string' || typeof item.meaning !== 'string') {
+      throw new Error('Invalid vocab item');
     }
   }
 }
