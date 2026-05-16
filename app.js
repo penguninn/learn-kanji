@@ -148,7 +148,8 @@ function rowTemplate(r) {
     <td class="kanji-cell">${esc(r.char)}</td>
     <td><strong>${esc(r.mainWord)}</strong><small>${esc(r.kana || '—')} · ${esc(r.level)}</small></td>
     <td>${esc(r.meaning)}</td>
-    <td>${r.groups.map(g => `<span class="tag">${esc(shortGroup(g))}</span>`).join('')}${lessonTags}</td>
+    <td>${r.groups.map(g => `<span class="tag">${esc(shortGroup(g))}</span>`).join('')}</td>
+    <td>${lessonTags || '<span class="muted">—</span>'}</td>
   </tr>`;
 }
 
@@ -163,6 +164,13 @@ function onTableClick(e) {
 
 function onModalClick(e) {
   if (e.target.closest('[data-close-modal]')) return closeModal();
+
+  const replayStroke = e.target.closest('[data-replay-stroke]');
+  if (replayStroke) {
+    const char = replayStroke.dataset.replayStroke;
+    if (char) renderStrokeAnimation(replayStroke, char);
+    return;
+  }
   const kanji = e.target.closest('[data-open-kanji]');
   if (kanji) {
     const row = buildRows().find(r => r.char === kanji.dataset.openKanji);
@@ -189,7 +197,7 @@ function closeModal() {
 function renderKanjiDetail(row) {
   const k = row.item;
   $('#modalContent').innerHTML = `<div class="detail-head"><div><p class="eyebrow">${esc(row.level)} · ${esc(groupLabels(row.groups))}${row.lessons.length ? ' · Bài ' + row.lessons.join(', ') : ''}</p><h2>${esc(k.char)}</h2><p>${esc(k.meanings.join(' / '))}</p></div></div>
-    <div id="strokeTarget" class="stroke-box"></div>
+    <button id="strokeTarget" class="stroke-box" type="button" data-replay-stroke="${esc(k.char)}" aria-label="Chạy lại hướng dẫn viết kanji"></button>
     <section class="detail-section"><h3>Âm On/Kun</h3><div class="reading-grid"><div><b>On</b>${reading(k.onyomi)}</div><div><b>Kun</b>${reading(k.kunyomi)}</div></div></section>
     <section class="detail-section"><h3>Từ vựng chứa 「${esc(k.char)}」</h3>${vocabList(row.words, k.char)}</section>`;
   renderStrokeAnimation($('#strokeTarget'), k.char);
@@ -242,7 +250,7 @@ function wordsForKanji(char) { return VOCAB.filter(v => v.word.includes(char)).s
 function groupsFor(char) { const ids = Object.entries(GROUPS).filter(([, g]) => g.chars.includes(char)).map(([id]) => id); return ids.length ? ids : ['other']; }
 function groupRank(row) { const first = row.groups[0]; return first === 'kana' ? 99 : Number(first.replace('g', '')) || 50; }
 function groupLabels(ids) { return ids.map(id => GROUPS[id]?.label || (id === 'kana' ? 'Hiragana thuần' : 'Khác')).join(' / '); }
-function shortGroup(id) { return id === 'kana' ? 'かな' : id === 'other' ? 'Khác' : id.toUpperCase(); }
+function shortGroup(id) { return id === 'kana' ? 'Hiragana thuần' : id === 'other' ? 'Khác' : (GROUPS[id]?.label || id); }
 function firstKun(k) { return (k.kunyomi?.[0] || k.onyomi?.[0] || '').replaceAll('.', ''); }
 function hasKanji(s) { return /[一-龯]/.test(s); }
 function dedupe(list) { const m = new Map(); list.forEach(x => m.set(`${x.word}|${x.kana}`, x)); return [...m.values()]; }
