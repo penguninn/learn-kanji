@@ -225,7 +225,7 @@ window.KANJI_MASTER = [
     "kunyomi": [
       "ひと"
     ],
-    "level": "N5",
+    "level": "N4",
     "group": "other",
     "examples": [
       {
@@ -2590,7 +2590,7 @@ window.KANJI_MASTER = [
     "hanViet": "cửu",
     "onyomi": [],
     "kunyomi": [],
-    "level": "N5",
+    "level": "N4",
     "group": "other",
     "examples": [
       {
@@ -3143,7 +3143,7 @@ window.KANJI_MASTER = [
     "hanViet": "ngũ",
     "onyomi": [],
     "kunyomi": [],
-    "level": "N5",
+    "level": "N4",
     "group": "other",
     "examples": [
       {
@@ -4094,7 +4094,7 @@ window.KANJI_MASTER = [
     "hanViet": "tam",
     "onyomi": [],
     "kunyomi": [],
-    "level": "N5",
+    "level": "N4",
     "group": "other",
     "examples": [
       {
@@ -4280,7 +4280,7 @@ window.KANJI_MASTER = [
     "hanViet": "tứ",
     "onyomi": [],
     "kunyomi": [],
-    "level": "N5",
+    "level": "N4",
     "group": "other",
     "examples": [
       {
@@ -4831,7 +4831,7 @@ window.KANJI_MASTER = [
     "hanViet": "thất",
     "onyomi": [],
     "kunyomi": [],
-    "level": "N5",
+    "level": "N4",
     "group": "other",
     "examples": [
       {
@@ -4997,7 +4997,7 @@ window.KANJI_MASTER = [
     "kunyomi": [
       "やしろ"
     ],
-    "level": "N5",
+    "level": "N4",
     "group": "places",
     "examples": [
       {
@@ -5447,7 +5447,7 @@ window.KANJI_MASTER = [
       "シュウ"
     ],
     "kunyomi": [],
-    "level": "N5",
+    "level": "N4",
     "group": "other",
     "examples": [
       {
@@ -5531,7 +5531,7 @@ window.KANJI_MASTER = [
     "hanViet": "thập",
     "onyomi": [],
     "kunyomi": [],
-    "level": "N5",
+    "level": "N4",
     "group": "other",
     "examples": [
       {
@@ -6832,7 +6832,7 @@ window.KANJI_MASTER = [
     "kunyomi": [
       "ち"
     ],
-    "level": "N5",
+    "level": "N4",
     "group": "other",
     "examples": [
       {
@@ -7910,7 +7910,7 @@ window.KANJI_MASTER = [
     "kunyomi": [
       "ひる"
     ],
-    "level": "N4",
+    "level": "N5",
     "group": "time",
     "examples": [
       {
@@ -8014,7 +8014,7 @@ window.KANJI_MASTER = [
     "kunyomi": [
       "あさ"
     ],
-    "level": "N4",
+    "level": "N5",
     "group": "time",
     "examples": [
       {
@@ -8944,7 +8944,7 @@ window.KANJI_MASTER = [
     "hanViet": "nhị",
     "onyomi": [],
     "kunyomi": [],
-    "level": "N5",
+    "level": "N4",
     "group": "other",
     "examples": [
       {
@@ -9402,7 +9402,7 @@ window.KANJI_MASTER = [
     "hanViet": "bát",
     "onyomi": [],
     "kunyomi": [],
-    "level": "N5",
+    "level": "N4",
     "group": "other",
     "examples": [
       {
@@ -9454,7 +9454,7 @@ window.KANJI_MASTER = [
     "kunyomi": [
       "なか.ば"
     ],
-    "level": "N5",
+    "level": "N4",
     "group": "other",
     "examples": [
       {
@@ -9486,7 +9486,7 @@ window.KANJI_MASTER = [
     "hanViet": "vãn",
     "onyomi": [],
     "kunyomi": [],
-    "level": "N4",
+    "level": "N5",
     "group": "time",
     "examples": [
       {
@@ -9716,7 +9716,7 @@ window.KANJI_MASTER = [
       "ヒャク"
     ],
     "kunyomi": [],
-    "level": "N5",
+    "level": "N4",
     "group": "other",
     "examples": [
       {
@@ -10747,7 +10747,7 @@ window.KANJI_MASTER = [
       "バン"
     ],
     "kunyomi": [],
-    "level": "N5",
+    "level": "N4",
     "group": "other",
     "examples": [
       {
@@ -11090,7 +11090,7 @@ window.KANJI_MASTER = [
     "kunyomi": [
       "よる"
     ],
-    "level": "N4",
+    "level": "N5",
     "group": "time",
     "examples": [
       {
@@ -11856,7 +11856,7 @@ window.KANJI_MASTER = [
     "hanViet": "lục",
     "onyomi": [],
     "kunyomi": [],
-    "level": "N5",
+    "level": "N4",
     "group": "other",
     "examples": [
       {
