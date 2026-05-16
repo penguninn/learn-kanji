@@ -1,5 +1,5 @@
 // Loader chung cho data import từ Quizlet Minna.
-// Mỗi bài gọi: window.importMinnaLesson(lessonNumber, setId, `KANJI|KANA\n...`)
+// Mỗi bài gọi: window.importMinnaLesson(lessonNumber, setId, `KANJI|KANA|NGHĨA\n...`)
 (() => {
   const data = window.KANJI_DATA;
   const isKanji = ch => /[一-龯]/.test(ch);
@@ -7,6 +7,7 @@
 
   injectLayoutFix();
   injectSyncScript('./data/study-groups.js');
+  injectSyncScript('./data/kanji-meta.js');
   injectSyncScript('./data/user-meaning-edits.js');
   injectSyncScript('./data/dev-save-hook.js');
 
@@ -15,24 +16,28 @@
     const lines = raw.split('\n').map(x => x.trim()).filter(Boolean);
 
     for (const line of lines) {
-      const [wordRaw, kanaRaw] = line.split('|').map(x => (x || '').trim());
+      const [wordRaw, kanaRaw, meaningRaw] = line.split('|').map(x => (x || '').trim());
       if (!wordRaw || !kanaRaw) continue;
       if (wordRaw === 'Kanji' || kanaRaw === 'Từ vựng') continue;
 
       const word = wordRaw.replace(/。$/g, '');
       const kana = kanaRaw.replace(/。$/g, '');
+      const meaning = meaningRaw || `Quizlet bài ${lesson}`;
       const existed = data.vocab.find(v => v.word === word && v.kana === kana);
 
       if (existed) {
         existed.lessons = Array.from(new Set([...(existed.lessons || []), lesson])).sort((a, b) => a - b);
         existed.lesson = existed.lessons[0];
         existed.source = existed.source || source;
+        if (!existed.meanings?.length || /^Quizlet bài \d+/.test(existed.meanings.join(' / '))) {
+          existed.meanings = [meaning];
+        }
       } else {
         data.vocab.push({
           word,
           kana,
           level: 'N5',
-          meanings: [`Quizlet bài ${lesson}`],
+          meanings: [meaning],
           lesson,
           lessons: [lesson],
           source,
@@ -42,12 +47,13 @@
 
       for (const ch of [...word].filter(isKanji)) {
         if (!hasKanji(ch)) {
+          const meta = window.KANJI_META?.[ch];
           data.kanji.push({
             char: ch,
             level: 'N5',
-            meanings: [word],
-            onyomi: [],
-            kunyomi: []
+            meanings: meta?.meanings || [word],
+            onyomi: meta?.onyomi || [],
+            kunyomi: meta?.kunyomi || []
           });
         }
       }
