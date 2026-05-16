@@ -22,10 +22,13 @@ const server = createServer(async (req, res) => {
       const body = await readBody(req);
       const edits = JSON.parse(body || '{}');
       validateEdits(edits);
-      const content = `window.USER_MEANING_EDITS = ${JSON.stringify(edits, null, 2)};\n`;
-      await writeFile(join(root, 'data/user-meaning-edits.js'), content, 'utf8');
+
+      const updated = await persistEditsToLessonFiles(edits);
+      const fallbackContent = `window.USER_MEANING_EDITS = ${JSON.stringify(edits, null, 2)};\n`;
+      await writeFile(join(root, 'data/user-meaning-edits.js'), fallbackContent, 'utf8');
+
       res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
-      res.end(JSON.stringify({ ok: true, count: Object.keys(edits).length }));
+      res.end(JSON.stringify({ ok: true, count: Object.keys(edits).length, updated }));
       return;
     }
 
@@ -56,8 +59,42 @@ const server = createServer(async (req, res) => {
 
 server.listen(port, () => {
   console.log(`Kanji study dev server: http://localhost:${port}`);
-  console.log('Edit nghĩa trên UI sẽ ghi vào data/user-meaning-edits.js');
+  console.log('Edit nghĩa trên UI sẽ cập nhật data/quizlet-minna-bai-XX-lines.js');
 });
+
+async function persistEditsToLessonFiles(edits) {
+  let updated = 0;
+  for (let lesson = 1; lesson <= 25; lesson++) {
+    const file = join(root, `data/quizlet-minna-bai-${String(lesson).padStart(2, '0')}-lines.js`);
+    if (!existsSync(file)) continue;
+
+    const original = await readFile(file, 'utf8');
+    const next = original.replace(/`([\s\S]*?)`\);/m, (_, raw) => {
+      const lines = raw.split('\n').map(line => {
+        const trimmed = line.trim();
+        if (!trimmed) return line;
+        const [word = '', kana = '', oldMeaning = ''] = trimmed.split('|').map(x => x.trim());
+        if (!word || !kana) return line;
+
+        const key = `${encodeURIComponent(word)}|${encodeURIComponent(kana)}`;
+        if (!Object.prototype.hasOwnProperty.call(edits, key)) return line;
+        updated++;
+        return `${word}|${kana}|${sanitizeMeaning(edits[key])}`;
+      });
+      return '`' + lines.join('\n') + '`);';
+    });
+
+    if (next !== original) await writeFile(file, next, 'utf8');
+  }
+  return updated;
+}
+
+function sanitizeMeaning(value) {
+  return String(value || '')
+    .replace(/[\r\n]+/g, ' / ')
+    .replace(/\|/g, '/')
+    .trim();
+}
 
 function readBody(req) {
   return new Promise((resolve, reject) => {
