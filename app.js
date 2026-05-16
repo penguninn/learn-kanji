@@ -1,7 +1,8 @@
-const { kanji: KANJI, vocab: RAW_VOCAB } = window.KANJI_DATA;
+const KANJI = (window.KANJI_MASTER || []).map(k => ({ char: k.char, level: k.level, meanings: [k.hanViet || k.char], onyomi: k.onyomi || [], kunyomi: k.kunyomi || [] }));
+const RAW_VOCAB = (window.MINNA_LESSONS_N5 || []).flatMap(l => (l.vocab || []).map(v => ({ word: v.word, kana: v.kana, meanings: [v.meaning || ''], level: 'N5', lesson: l.lesson, lessons: [l.lesson] })));
 
 const GROUPS = {
-  g1: { label: 'Nhóm 1: Động từ hay dùng', chars: [...'行来帰食飲見聞読書買会話作使待持入出休'] },
+  g1: { label: 'Nhóm 1: Động từ', chars: [...'行来帰食飲見聞読書買会話作使待持入出休'] },
   g2: { label: 'Nhóm 2: Thời gian', chars: [...'日月火水木金土曜年時分今毎朝昼晩夜午前後間'] },
   g3: { label: 'Nhóm 3: Người và cuộc sống', chars: [...'人男女子友父母兄姉弟妹家族私名生先'] },
   g4: { label: 'Nhóm 4: Địa điểm', chars: [...'国学校会社店駅道町村市外中上下左右東西南北'] },
