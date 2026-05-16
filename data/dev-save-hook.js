@@ -45,23 +45,53 @@
   });
 
   function replayStrokeAnimation(box) {
-    const animatedEls = [...box.querySelectorAll('.stroke-path, .stroke-text')];
-    if (!animatedEls.length) return;
+    const oldSvg = box.querySelector('svg');
+    if (!oldSvg) return;
 
-    animatedEls.forEach(el => {
-      el.style.animation = 'none';
-      el.style.strokeDashoffset = '1000';
-    });
+    const freshSvg = rebuildSvg(oldSvg);
+    if (!freshSvg) return;
 
-    // Force browser layout while the elements are really in the DOM.
-    // Without this, Chromium may only flash the final SVG instead of replaying.
-    box.getBoundingClientRect();
+    box.replaceChildren();
 
+    // Insert on the next paint cycle so CSS animation starts from initial state.
     requestAnimationFrame(() => {
-      animatedEls.forEach(el => {
-        el.style.animation = '';
-        el.style.strokeDashoffset = '';
+      requestAnimationFrame(() => {
+        box.replaceChildren(freshSvg);
       });
     });
+  }
+
+  function rebuildSvg(oldSvg) {
+    const ns = 'http://www.w3.org/2000/svg';
+    const viewBox = oldSvg.getAttribute('viewBox') || '0 0 109 109';
+    const svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('viewBox', viewBox);
+    svg.setAttribute('class', oldSvg.getAttribute('class') || 'stroke-svg');
+
+    const oldPaths = [...oldSvg.querySelectorAll('path[d]')];
+    if (oldPaths.length) {
+      oldPaths.forEach((oldPath, index) => {
+        const path = document.createElementNS(ns, 'path');
+        path.setAttribute('d', oldPath.getAttribute('d'));
+        path.setAttribute('class', 'stroke-path');
+        path.style.animationDelay = oldPath.style.animationDelay || `${index * 0.22}s`;
+        svg.appendChild(path);
+      });
+      return svg;
+    }
+
+    const oldText = oldSvg.querySelector('text');
+    if (oldText) {
+      const text = document.createElementNS(ns, 'text');
+      text.setAttribute('class', 'stroke-text');
+      text.setAttribute('x', oldText.getAttribute('x') || '125');
+      text.setAttribute('y', oldText.getAttribute('y') || '170');
+      text.setAttribute('text-anchor', oldText.getAttribute('text-anchor') || 'middle');
+      text.textContent = oldText.textContent || '';
+      svg.appendChild(text);
+      return svg;
+    }
+
+    return null;
   }
 })();
