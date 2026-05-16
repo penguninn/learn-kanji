@@ -80,3 +80,50 @@ td { padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: m
 
 @media (max-width: 1100px) { .split { grid-template-columns: 1fr; } .detail-panel { position: static; max-height: none; } }
 @media (max-width: 760px) { .topbar, .list-tools { align-items: start; flex-direction: column; } .page { grid-template-columns: 1fr; } .filters { position: static; } }
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 14, 28, 0.55);
+}
+
+.modal-card {
+  position: relative;
+  z-index: 1;
+  width: min(900px, calc(100vw - 24px));
+  max-height: calc(100vh - 24px);
+  overflow: auto;
+  border-radius: 14px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
