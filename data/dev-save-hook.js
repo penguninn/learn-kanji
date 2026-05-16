@@ -37,4 +37,24 @@
       target.click();
     }
   });
+
+  document.addEventListener('click', event => {
+    const box = event.target.closest?.('#strokeTarget');
+    if (!box) return;
+    replayStrokeAnimation(box);
+  });
+
+  function replayStrokeAnimation(box) {
+    const svg = box.querySelector('svg');
+    if (!svg) return;
+
+    const clone = svg.cloneNode(true);
+    clone.querySelectorAll('.stroke-path, .stroke-text').forEach(el => {
+      el.style.animation = 'none';
+      el.getBoundingClientRect();
+      el.style.animation = '';
+    });
+
+    svg.replaceWith(clone);
+  }
 })();
