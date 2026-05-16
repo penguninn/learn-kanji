@@ -45,16 +45,23 @@
   });
 
   function replayStrokeAnimation(box) {
-    const svg = box.querySelector('svg');
-    if (!svg) return;
+    const animatedEls = [...box.querySelectorAll('.stroke-path, .stroke-text')];
+    if (!animatedEls.length) return;
 
-    const clone = svg.cloneNode(true);
-    clone.querySelectorAll('.stroke-path, .stroke-text').forEach(el => {
+    animatedEls.forEach(el => {
       el.style.animation = 'none';
-      el.getBoundingClientRect();
-      el.style.animation = '';
+      el.style.strokeDashoffset = '1000';
     });
 
-    svg.replaceWith(clone);
+    // Force browser layout while the elements are really in the DOM.
+    // Without this, Chromium may only flash the final SVG instead of replaying.
+    box.getBoundingClientRect();
+
+    requestAnimationFrame(() => {
+      animatedEls.forEach(el => {
+        el.style.animation = '';
+        el.style.strokeDashoffset = '';
+      });
+    });
   }
 })();
