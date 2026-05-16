@@ -37,20 +37,7 @@ const DEFAULT_PARTICLES = {
   借: ['人に/からNを借りる'], 送: ['人にNを送る', '人を駅まで送る'], 洗: ['Nを洗う'], 着: ['服を着る', '場所に着く']
 };
 
-const learnedKey = 'kanji-list-study.learned';
-const meaningEditKey = 'kanji-list-study.meaning-edits.v1';
-const learnedSet = new Set(JSON.parse(localStorage.getItem(learnedKey) || '[]'));
-const meaningEdits = JSON.parse(localStorage.getItem(meaningEditKey) || '{}');
 const VOCAB = dedupe([...RAW_VOCAB, ...EXTRA_VOCAB]);
-
-for (const v of VOCAB) {
-  v.defaultMeanings = [...(v.meanings || [])];
-  const key = vocabKey(v);
-  if (meaningEdits[key]) {
-    v.meanings = [meaningEdits[key]];
-    v.isEdited = true;
-  }
-}
 
 const state = {
   query: '',
@@ -58,8 +45,7 @@ const state = {
   group: 'all',
   lesson: 'all',
   sortMode: 'gojuon',
-  selectedKey: '',
-  editingVocabKey: ''
+  selectedKey: ''
 };
 
 const $ = s => document.querySelector(s);
@@ -80,16 +66,11 @@ function init() {
   groupFilter.addEventListener('change', e => { state.group = e.target.value; render(); });
   lessonFilter.addEventListener('change', e => { state.lesson = e.target.value; state.selectedKey = ''; closeModal(); render(); });
   $('#sortMode').addEventListener('change', e => { state.sortMode = e.target.value; render(); });
-  $('#resetProgressBtn').addEventListener('click', () => { learnedSet.clear(); localStorage.removeItem(learnedKey); render(); });
   levelFilters.forEach(x => x.addEventListener('change', () => { state.levels = new Set(levelFilters.filter(i => i.checked).map(i => i.value)); render(); }));
   resultBody.addEventListener('click', onTableClick);
   document.addEventListener('click', onModalClick);
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeModal();
-    if ((e.ctrlKey || e.metaKey) && e.key === 's' && state.editingVocabKey) {
-      e.preventDefault();
-      saveMeaningFromForm(state.editingVocabKey);
-    }
   });
   render();
 }
@@ -156,30 +137,25 @@ function render() {
   const rows = buildRows();
   $('#resultTitle').textContent = `Danh sách học (${rows.length})`;
   const lessonLabel = state.lesson === 'all' ? 'Tất cả bài' : `Bài ${state.lesson}`;
-  $('#statsPanel').innerHTML = `<b>${rows.length}</b> dòng đang hiển thị<br><b>${learnedSet.size}</b> mục đã nhớ<br><b>${Object.keys(meaningEdits).length}</b> nghĩa đã sửa<br><span>${lessonLabel}</span><br><span>${state.group === 'all' ? 'Tất cả nhóm' : (GROUPS[state.group]?.label || 'Hiragana thuần')}</span>`;
+  $('#statsPanel').innerHTML = `<b>${rows.length}</b> dòng đang hiển thị<br><span>${lessonLabel}</span><br><span>${state.group === 'all' ? 'Tất cả nhóm' : (GROUPS[state.group]?.label || 'Hiragana thuần')}</span>`;
   emptyState.classList.toggle('hidden', rows.length > 0);
   resultBody.innerHTML = rows.map(rowTemplate).join('');
 }
 
 function rowTemplate(r) {
-  const learned = learnedSet.has(r.key) || learnedSet.has(r.char);
   const lessonTags = r.lessons.slice(0, 4).map(n => `<span class="tag lesson-tag">B${n}</span>`).join('') + (r.lessons.length > 4 ? `<span class="tag">+${r.lessons.length - 4}</span>` : '');
   return `<tr class="study-row ${state.selectedKey === r.key ? 'selected' : ''}" data-key="${esc(r.key)}">
     <td class="kanji-cell">${esc(r.char)}</td>
     <td><strong>${esc(r.mainWord)}</strong><small>${esc(r.kana || '—')} · ${esc(r.level)}</small></td>
     <td>${esc(r.meaning)}</td>
     <td>${r.groups.map(g => `<span class="tag">${esc(shortGroup(g))}</span>`).join('')}${lessonTags}</td>
-    <td><button class="remember-btn ${learned ? 'active' : ''}" data-remember="${esc(r.key)}">${learned ? '✓' : '+'}</button></td>
   </tr>`;
 }
 
 function onTableClick(e) {
-  const remember = e.target.closest('[data-remember]');
-  if (remember) { toggleLearned(remember.dataset.remember); e.stopPropagation(); render(); return; }
   const tr = e.target.closest('tr[data-key]');
   if (!tr) return;
   state.selectedKey = tr.dataset.key;
-  state.editingVocabKey = '';
   const row = currentRow();
   if (row) openDetail(row);
   render();
@@ -187,25 +163,10 @@ function onTableClick(e) {
 
 function onModalClick(e) {
   if (e.target.closest('[data-close-modal]')) return closeModal();
-  const remember = e.target.closest('[data-remember]');
-  if (remember) { toggleLearned(remember.dataset.remember); render(); return; }
-
-  const editBtn = e.target.closest('[data-edit-meaning]');
-  if (editBtn) { state.editingVocabKey = editBtn.dataset.editMeaning; reopenCurrentDetail(); return; }
-
-  const cancelBtn = e.target.closest('[data-cancel-edit]');
-  if (cancelBtn) { state.editingVocabKey = ''; reopenCurrentDetail(); return; }
-
-  const saveBtn = e.target.closest('[data-save-meaning]');
-  if (saveBtn) { saveMeaningFromForm(saveBtn.dataset.saveMeaning); return; }
-
-  const resetBtn = e.target.closest('[data-reset-meaning]');
-  if (resetBtn) { resetMeaning(resetBtn.dataset.resetMeaning); return; }
-
   const kanji = e.target.closest('[data-open-kanji]');
   if (kanji) {
     const row = buildRows().find(r => r.char === kanji.dataset.openKanji);
-    if (row) { state.selectedKey = row.key; state.editingVocabKey = ''; openDetail(row); render(); }
+    if (row) { state.selectedKey = row.key; openDetail(row); render(); }
   }
 }
 
@@ -220,7 +181,6 @@ function openDetail(row) {
 function closeModal() {
   const modal = $('#detailModal');
   if (!modal) return;
-  state.editingVocabKey = '';
   modal.classList.add('hidden');
   modal.setAttribute('aria-hidden', 'true');
   document.body.classList.remove('modal-open');
@@ -228,7 +188,7 @@ function closeModal() {
 
 function renderKanjiDetail(row) {
   const k = row.item;
-  $('#modalContent').innerHTML = `<div class="detail-head"><div><p class="eyebrow">${esc(row.level)} · ${esc(groupLabels(row.groups))}${row.lessons.length ? ' · Bài ' + row.lessons.join(', ') : ''}</p><h2>${esc(k.char)}</h2><p>${esc(k.meanings.join(' / '))}</p></div><button class="remember-btn" data-remember="${esc(row.key)}">✓</button></div>
+  $('#modalContent').innerHTML = `<div class="detail-head"><div><p class="eyebrow">${esc(row.level)} · ${esc(groupLabels(row.groups))}${row.lessons.length ? ' · Bài ' + row.lessons.join(', ') : ''}</p><h2>${esc(k.char)}</h2><p>${esc(k.meanings.join(' / '))}</p></div></div>
     <div id="strokeTarget" class="stroke-box"></div>
     <section class="detail-section"><h3>Âm On/Kun</h3><div class="reading-grid"><div><b>On</b>${reading(k.onyomi)}</div><div><b>Kun</b>${reading(k.kunyomi)}</div></div></section>
     <section class="detail-section"><h3>Từ vựng chứa 「${esc(k.char)}」</h3>${vocabList(row.words, k.char)}</section>`;
@@ -237,9 +197,8 @@ function renderKanjiDetail(row) {
 
 function renderKanaDetail(row) {
   const v = row.item;
-  $('#modalContent').innerHTML = `<div class="detail-head"><div><p class="eyebrow">Hiragana thuần${row.lessons.length ? ' · Bài ' + row.lessons.join(', ') : ''}</p><h2 class="kana-title">${esc(v.word)}</h2><p>${esc(v.kana)} · ${esc(v.meanings.join(' / '))}</p></div><button class="remember-btn" data-remember="${esc(row.key)}">✓</button></div>
-    <section class="detail-section"><h3>Mẫu đi kèm</h3>${particleList(v, '')}</section>
-    <section class="detail-section"><h3>Sửa nghĩa</h3>${vocabList([v], '')}</section>`;
+  $('#modalContent').innerHTML = `<div class="detail-head"><div><p class="eyebrow">Hiragana thuần${row.lessons.length ? ' · Bài ' + row.lessons.join(', ') : ''}</p><h2 class="kana-title">${esc(v.word)}</h2><p>${esc(v.kana)} · ${esc(v.meanings.join(' / '))}</p></div></div>
+    <section class="detail-section"><h3>Mẫu đi kèm</h3>${particleList(v, '')}</section>`;
 }
 
 function vocabList(words, char) {
@@ -248,78 +207,18 @@ function vocabList(words, char) {
 }
 
 function vocabLine(v, char) {
-  const key = vocabKey(v);
-  const edited = !!meaningEdits[key];
   const lessons = (v.lessons || v.lesson) ? ' · Bài ' + (v.lessons || [v.lesson]).join(', ') : '';
-  const editForm = state.editingVocabKey === key ? meaningEditForm(v, key) : '';
   return `<article class="vocab-line">
     <div class="vocab-main">
-      <div><b>${esc(v.word)}</b><span>${esc(v.kana)} · ${esc(v.meanings.join(' / '))}${lessons}${edited ? ' · đã sửa' : ''}</span></div>
-      <div class="vocab-actions">
-        <button type="button" data-edit-meaning="${esc(key)}">Sửa nghĩa</button>
-        ${edited ? `<button type="button" data-reset-meaning="${esc(key)}">Reset</button>` : ''}
-      </div>
+      <div><b>${esc(v.word)}</b><span>${esc(v.kana)} · ${esc(v.meanings.join(' / '))}${lessons}</span></div>
     </div>
-    ${editForm}
     ${particleList(v, char)}
     ${kanjiButtons(v.word, char)}
   </article>`;
 }
 
-function meaningEditForm(v, key) {
-  return `<div class="meaning-editor">
-    <label>Nghĩa tiếng Việt</label>
-    <textarea data-meaning-input="${esc(key)}" rows="3">${esc(v.meanings.join(' / '))}</textarea>
-    <div class="meaning-editor-actions">
-      <button type="button" class="primary-btn" data-save-meaning="${esc(key)}">Lưu</button>
-      <button type="button" data-cancel-edit>Hủy</button>
-      <small>Ctrl+S để lưu nhanh</small>
-    </div>
-  </div>`;
-}
-
-function saveMeaningFromForm(key) {
-  const input = document.querySelector(`[data-meaning-input="${cssEscape(key)}"]`);
-  const value = input?.value.trim();
-  if (!value) return;
-  const v = findVocabByKey(key);
-  if (!v) return;
-  meaningEdits[key] = value;
-  localStorage.setItem(meaningEditKey, JSON.stringify(meaningEdits));
-  v.meanings = [value];
-  v.isEdited = true;
-  state.editingVocabKey = '';
-  render();
-  reopenCurrentDetail();
-}
-
-function resetMeaning(key) {
-  const v = findVocabByKey(key);
-  if (!v) return;
-  delete meaningEdits[key];
-  localStorage.setItem(meaningEditKey, JSON.stringify(meaningEdits));
-  v.meanings = [...(v.defaultMeanings || v.meanings)];
-  v.isEdited = false;
-  state.editingVocabKey = '';
-  render();
-  reopenCurrentDetail();
-}
-
-function reopenCurrentDetail() {
-  const row = currentRow();
-  if (row) openDetail(row);
-}
-
 function currentRow() {
   return buildRows().find(x => x.key === state.selectedKey);
-}
-
-function findVocabByKey(key) {
-  return VOCAB.find(v => vocabKey(v) === key);
-}
-
-function vocabKey(v) {
-  return `${encodeURIComponent(v.word)}|${encodeURIComponent(v.kana)}`;
 }
 
 function particleList(v, char) {
@@ -349,9 +248,7 @@ function hasKanji(s) { return /[一-龯]/.test(s); }
 function dedupe(list) { const m = new Map(); list.forEach(x => m.set(`${x.word}|${x.kana}`, x)); return [...m.values()]; }
 function normalize(parts) { return parts.flat(Infinity).filter(Boolean).join(' ').toLowerCase(); }
 function reading(list) { return list?.length ? list.map(x => `<span>${esc(x)}</span>`).join('') : '<span class="muted">—</span>'; }
-function toggleLearned(key) { learnedSet.has(key) ? learnedSet.delete(key) : learnedSet.add(key); localStorage.setItem(learnedKey, JSON.stringify([...learnedSet])); }
 function esc(v) { return String(v ?? '').replace(/[&<>"]/g, s => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[s])); }
-function cssEscape(v) { return String(v).replace(/\\/g, '\\\\').replace(/"/g, '\\"'); }
 function gojuonKey(kana = '') { const order = 'あいうえおかがきぎくぐけげこごさざしじすずせぜそぞただちぢつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもやゆよらりるれろわをん'; return [...kana].map(ch => String(order.indexOf(ch)).padStart(3, '0')).join('-') || '999'; }
 function kanaToRomaji(input = '') { const map = { 'きゃ':'kya','きゅ':'kyu','きょ':'kyo','しゃ':'sha','しゅ':'shu','しょ':'sho','ちゃ':'cha','ちゅ':'chu','ちょ':'cho','にゃ':'nya','にゅ':'nyu','にょ':'nyo','ひゃ':'hya','ひゅ':'hyu','ひょ':'hyo','みゃ':'mya','みゅ':'myu','みょ':'myo','りゃ':'rya','りゅ':'ryu','りょ':'ryo','ぎゃ':'gya','ぎゅ':'gyu','ぎょ':'gyo','じゃ':'ja','じゅ':'ju','じょ':'jo','あ':'a','い':'i','う':'u','え':'e','お':'o','か':'ka','き':'ki','く':'ku','け':'ke','こ':'ko','さ':'sa','し':'shi','す':'su','せ':'se','そ':'so','た':'ta','ち':'chi','つ':'tsu','て':'te','と':'to','な':'na','に':'ni','ぬ':'nu','ね':'ne','の':'no','は':'ha','ひ':'hi','ふ':'fu','へ':'he','ほ':'ho','ま':'ma','み':'mi','む':'mu','め':'me','も':'mo','や':'ya','ゆ':'yu','よ':'yo','ら':'ra','り':'ri','る':'ru','れ':'re','ろ':'ro','わ':'wa','を':'wo','ん':'n','が':'ga','ぎ':'gi','ぐ':'gu','げ':'ge','ご':'go','ざ':'za','じ':'ji','ず':'zu','ぜ':'ze','ぞ':'zo','だ':'da','ぢ':'ji','づ':'zu','で':'de','ど':'do','ば':'ba','び':'bi','ぶ':'bu','べ':'be','ぼ':'bo','ぱ':'pa','ぴ':'pi','ぷ':'pu','ぺ':'pe','ぽ':'po','ー':'-' }; let out = ''; for (let i = 0; i < input.length; i++) { const two = input.slice(i, i + 2); if (map[two]) { out += map[two]; i++; } else out += map[input[i]] || input[i]; } return out.toLowerCase(); }
 
