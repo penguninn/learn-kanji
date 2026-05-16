@@ -48,8 +48,6 @@ td { padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: m
 .kanji-cell { font-family: 'Noto Serif CJK JP', 'Yu Mincho', serif; font-size: 26px; font-weight: 700; min-width: 70px; }
 .kana-col { display: inline-grid; place-items: center; width: 30px; height: 30px; margin-right: 7px; border-radius: 8px; color: #fff; background: var(--accent); font-weight: 800; }
 .tag { display: inline-flex; margin: 2px; padding: 3px 8px; border-radius: 999px; background: var(--soft); color: var(--muted); font-size: 12px; }
-.remember-btn { width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 999px; background: #fff; }
-.remember-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 .empty { padding: 32px; color: var(--muted); text-align: center; }
 .hidden { display: none; }
 
